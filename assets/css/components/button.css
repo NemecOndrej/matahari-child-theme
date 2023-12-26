@@ -1,14 +1,25 @@
-html, body {
-  --black: #333;
-  --black-rgb: hexToRGB(#333);
-  --off-white: #FDFCF8;
-  --off-white-rgb: hexToRGB(#FDFCF8);
-  --violet-accent: #9C68E2;
-  --violet-accent-rgb: hexToRGB(#9C68E2);
-}
-
+/*	Defined widths
+--------------------------------------- */
+/*	Slider settings
+--------------------------------------- */
+/*	Colors
+--------------------------------------- */
+/*	Breakpoints
+--------------------------------------- */
+/*	Other
+--------------------------------------- */
 /* common border radius */
 /* disable text selection */
+/*	Font / Text Mixins
+======================================================================== */
+/*	Font family mixin
+    Examples:
+    @include f(s,r);
+    @include f(gs,l);
+--------------------------------------- */
+/*	Text mixin
+    (dynamic font size and line height)
+--------------------------------------- */
 a.btn,
 .editor-styles-wrapper .gt-block a.btn {
   min-width: 180px;

@@ -1,5 +1,25 @@
+/*	Defined widths
+--------------------------------------- */
+/*	Slider settings
+--------------------------------------- */
+/*	Colors
+--------------------------------------- */
+/*	Breakpoints
+--------------------------------------- */
+/*	Other
+--------------------------------------- */
 /* common border radius */
 /* disable text selection */
+/*	Font / Text Mixins
+======================================================================== */
+/*	Font family mixin
+    Examples:
+    @include f(s,r);
+    @include f(gs,l);
+--------------------------------------- */
+/*	Text mixin
+    (dynamic font size and line height)
+--------------------------------------- */
 a.btn {
   min-width: 180px;
   padding: 11px 14px !important;

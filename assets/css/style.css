@@ -103,13 +103,171 @@
 
 /* #endregion */
 /* TYPOGRAPHY */
-/*	Headings
+/* Oswald - 400 */
+@font-face {
+  font-display: swap;
+  font-family: "Oswald-Regular";
+  src: url("../fonts/Oswald-Regular.ttf") format("ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+/* Oswald - 500 */
+@font-face {
+  font-display: swap;
+  font-family: "Osvald-Semibold";
+  src: url("../fonts/Oswald-SemiBold.ttf") format("ttf");
+  font-weight: 500;
+  font-style: normal;
+}
+/* Oswald - 700 */
+@font-face {
+  font-display: swap;
+  font-family: "Osvald-Bold";
+  src: url("../fonts/Oswald-Bold.ttf") format("ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+/* Poppins - 300 */
+@font-face {
+  font-display: swap;
+  font-family: "Poppins-Light";
+  src: url("../fonts/Poppins-Light.ttf") format("ttf");
+  font-weight: 300;
+  font-style: normal;
+}
+/* Poppins - 400 */
+@font-face {
+  font-display: swap;
+  font-family: "Poppins-Regular";
+  src: url("../fonts/Poppins-Regular.ttf") format("ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+/* Poppins - 500 */
+@font-face {
+  font-display: swap;
+  font-family: "Poppins-Medium";
+  src: url("../fonts/Poppins-Medium.ttf") format("ttf");
+  font-weight: 500;
+  font-style: normal;
+}
+/*	1) Headlines text group
 --------------------------------------- */
-/*	Other texts
+h1,
+.h1 {
+  /*	1) Headlines text group
+  --------------------------------------- */
+  font-size: calc(var(--fs-rate) * 6.4rem);
+  line-height: 1.171875;
+}
+
+h2,
+.h2 {
+  /*	1) Headlines text group
+  --------------------------------------- */
+  font-size: calc(var(--fs-rate) * 9.2rem);
+  line-height: 1;
+  font-family: "Osvald-Bold", sans-serif;
+  font-weight: 700;
+}
+
+h3,
+.h3 {
+  /*	1) Headlines text group
+  --------------------------------------- */
+  font-size: calc(var(--fs-rate) * 2.8rem);
+  line-height: 1.4285714286;
+}
+
+h4,
+.h4 {
+  /*	1) Headlines text group
+  --------------------------------------- */
+  font-size: calc(var(--fs-rate) * 2.4rem);
+  line-height: 1.1666666667;
+}
+
+h5,
+.h5 {
+  /*	1) Headlines text group
+  --------------------------------------- */
+  font-size: calc(var(--fs-small-rate) * 1.8rem);
+  line-height: 1.5555555556;
+}
+
+h6,
+.h6 {
+  /*	1) Headlines text group
+  --------------------------------------- */
+  font-size: calc(var(--fs-small-rate) * 1.8rem);
+  line-height: 1.5555555556;
+  font-family: "Poppins-Light", sans-serif;
+  font-weight: 300;
+}
+
+/*	2) Display text group
 --------------------------------------- */
-/*	Specific
+.dt-1 {
+  /*	1) Headlines text group
+  --------------------------------------- */
+  font-size: calc(var(--fs-small-rate) * 1.6rem);
+  line-height: 1.75;
+}
+.dt-2 {
+  /*	1) Headlines text group
+  --------------------------------------- */
+  font-size: calc(var(--fs-small-rate) * 1.6rem);
+  line-height: 1.75;
+}
+.dt-3 {
+  /*	1) Headlines text group
+  --------------------------------------- */
+  font-size: calc(var(--fs-small-rate) * 1.6rem);
+  line-height: 1.75;
+}
+.dt-4 {
+  /*	1) Headlines text group
+  --------------------------------------- */
+  font-size: calc(var(--fs-small-rate) * 1.6rem);
+  /*	3) General text group
+  --------------------------------------- */
+  line-height: 1.75;
+}
+
+/*	2) General text group
 --------------------------------------- */
-/* MAIN DESIGN */ /*	Defined widths
+.subheader {
+  /*	1) Headlines text group
+  --------------------------------------- */
+  font-size: calc(var(--fs-small-rate) * 2rem);
+  line-height: 1.4;
+}
+
+.bbt {
+  /*	1) Headlines text group
+  --------------------------------------- */
+  font-size: calc(var(--fs-small-rate) * 1.8rem);
+  line-height: 1.5555555556;
+}
+
+.sbt {
+  /*	1) Headlines text group
+  --------------------------------------- */
+  font-size: 14px;
+  line-height: 1.7142857143;
+}
+
+.button {
+  /*	1) Headlines text group
+  --------------------------------------- */
+  font-size: 14px;
+  line-height: 1.7142857143;
+}
+
+/*	4) Theme specific
+--------------------------------------- */
+/* MAIN DESIGN */
+/*	Defined widths
 --------------------------------------- */
 /*	Slider settings
 --------------------------------------- */
@@ -143,7 +301,8 @@ FONT WEIGHTS:
     thin:     100;
 */
 /* #region GENERAL SETTINGS ============================================================= */
-html, body {
+html,
+body {
   background: white;
   color: black;
   font-family: "Open Sans", Arial, sans-serif;
@@ -151,12 +310,14 @@ html, body {
   -webkit-text-size-adjust: 100%;
 }
 @media screen and (max-width: 1500px) {
-  html, body {
+  html,
+  body {
     font-size: 58%;
   }
 }
 @media screen and (max-width: 1240px) {
-  html, body {
+  html,
+  body {
     font-size: 55%;
   }
 }
@@ -214,7 +375,9 @@ body {
   }
 }
 
-input, textarea, select {
+input,
+textarea,
+select {
   color: black;
   font-size: 14px;
   font-family: "Open Sans", Arial, sans-serif;
@@ -232,7 +395,10 @@ a:hover {
   text-decoration: none;
 }
 
-a, label, input[type=button], input[type=submit] {
+a,
+label,
+input[type=button],
+input[type=submit] {
   cursor: pointer;
 }
 
@@ -255,10 +421,11 @@ a, label, input[type=button], input[type=submit] {
   position: relative;
   padding: 0 2.5rem;
   width: 100%;
-  max-width: 1140px;
+  max-width: 152rem;
 }
 
-img, svg {
+img,
+svg {
   max-width: 100%;
   height: auto;
 }
@@ -268,7 +435,7 @@ img, svg {
 .hamburger {
   position: absolute;
   top: 50%;
-  right: calc(((4rem - calc(4rem * 0.5)) / 2) + 0);
+  right: calc((4rem - calc(4rem * 0.5)) / 2 + 0);
   -webkit-transform: translate(0, -50%);
           transform: translate(0, -50%);
   width: calc(4rem * 0.5);
@@ -377,13 +544,6 @@ img, svg {
 
 /* #endregion */
 /* #region SITE HEADER ======================================================================= */
-body {
-  padding-top: var(--site-header-height);
-}
-
-body.admin-bar .site-header {
-  top: 32px;
-}
 @media screen and (max-width: 782px) {
   body.admin-bar .site-header {
     top: 46px;
@@ -392,11 +552,10 @@ body.admin-bar .site-header {
 
 .site-header {
   width: 100%;
-  position: fixed;
+  position: relative;
   left: 0;
   top: 0;
   z-index: 500;
-  background: black;
   padding: 2.5rem 0;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -420,6 +579,13 @@ body.admin-bar .site-header {
       -ms-flex: 0 0 20rem;
           flex: 0 0 20rem;
 }
+.site-header .site-header__left-col a svg {
+  width: 100%;
+  max-width: 6.3rem;
+  height: auto;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
 .site-header .site-header__right-col {
   -webkit-box-flex: 1;
       -ms-flex: 1;
@@ -440,12 +606,14 @@ body.admin-bar .site-header {
   display: inline-flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  gap: 2rem;
+  gap: 8rem;
   list-style: none;
 }
 .site-header ul li a {
-  color: white;
-  font-size: 1.5rem;
+  color: black;
+  font-size: 1.6rem;
+  -webkit-filter: drop-shadow(5px 20px 50px rgba(0, 0, 0, 0.1));
+          filter: drop-shadow(5px 20px 50px rgba(0, 0, 0, 0.1));
 }
 
 .site-header__search {
@@ -856,4 +1024,3 @@ section.gt-block .center,
 }
 
 /*@import url(blocks/XXX.scss);*/
-/*# sourceMappingURL=style.css.map */

@@ -2,14 +2,14 @@
 
 @import "settings";
 
-@mixin font($color, $font-size, $line-height, $font-weight: 400){
+@mixin font($color, $font-size, $line-height, $font-weight: 400) {
     color: $color;
     font-size: $font-size;
     line-height: $line-height;
     font-weight: $font-weight;
 }
 
-@mixin overlay(){
+@mixin overlay() {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -19,7 +19,7 @@
     overflow: hidden;
 }
 
-@mixin clearfix(){
+@mixin clearfix() {
     content: " ";
     width: 100%;
     height: 0px;
@@ -28,24 +28,24 @@
     clear: both;
 }
 
-@mixin bgCover(){
+@mixin bgCover() {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
 }
 
-@mixin bgContain(){
+@mixin bgContain() {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;
 }
 
-@mixin inlineBlock(){
+@mixin inlineBlock() {
     display: inline-block;
     vertical-align: top;
 }
 
-@mixin gradientbg($start: #EEE, $stop: #FFF){
+@mixin gradientbg($start: #eee, $stop: #fff) {
     background: $start;
     background: -moz-linear-gradient(0deg, $start 0%, $stop 100%);
     background: -webkit-linear-gradient(0deg, $start 0%, $stop 100%);
@@ -56,44 +56,43 @@
 }
 
 /* common border radius */
-@mixin border-radius($radius){
+@mixin border-radius($radius) {
     border-radius: $radius;
 }
 
-@mixin box-shadow($shadow){
+@mixin box-shadow($shadow) {
     box-shadow: $shadow;
 }
 
 /* disable text selection */
-@mixin notextselect(){
+@mixin notextselect() {
     user-select: none;
 }
 
-@mixin transition($duration:0.3s, $ease:ease){
+@mixin transition($duration: 0.3s, $ease: ease) {
     transition: all $duration $ease;
 }
 
-@mixin transition-custom($transition){
+@mixin transition-custom($transition) {
     transition: $transition;
 }
 
-@mixin transition-off(){
+@mixin transition-off() {
     transition: none;
 }
 
-@mixin transform($arguments...){
+@mixin transform($arguments...) {
     transform: $arguments;
 }
 
 @mixin media($width) {
-    @media screen and (max-width: $width)  {
+    @media screen and (max-width: $width) {
         @content;
     }
 }
 
-@mixin is-overlay($type: 'full') {
-
-    @if $type=='full' {
+@mixin is-overlay($type: "full") {
+    @if $type== "full" {
         position: absolute;
         top: 0;
         right: 0;
@@ -105,7 +104,7 @@
 @mixin centering() {
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 }
 
 @mixin is-covered() {
@@ -118,12 +117,12 @@
 }
 
 // Covered element wrapper
-@mixin covered-child( $ratio: '', $element: img ) {
+@mixin covered-child($ratio: "", $element: img) {
     position: relative;
     overflow: hidden;
     width: 100%;
 
-    @if $ratio!='' {
+    @if $ratio!= "" {
         // padding-top: $ratio; // Number of percents to width (fake height)
         aspect-ratio: $ratio;
     }
@@ -137,7 +136,6 @@
     @return red($hex), green($hex), blue($hex);
 }
 
-
 /*	Font / Text Mixins
 ======================================================================== */
 
@@ -149,32 +147,28 @@
 
 // font families s = Switzer, gs = General Sans
 // font weights m = medium, l = light, r = regular
-@mixin f( $font-family: 's', $font-weight: 'r' ) {
-
+@mixin f($font-family: "o", $font-weight: "r") {
     // Switzer
-    @if $font-family == 's' {
-
-        @if $font-weight == 'sb' {
-            font-family: 'Switzer-Semibold', sans-serif;
-            font-weight: 600;
-        } @else if $font-weight == 'm' {
-            font-family: 'Switzer-Medium', sans-serif;
+    @if $font-family == "o" {
+        @if $font-weight == "b" {
+            font-family: "Osvald-Bold", sans-serif;
+            font-weight: 700;
+        } @else if $font-weight == "sb" {
+            font-family: "Osvald-Semibold", sans-serif;
             font-weight: 500;
         } @else {
-            font-family: 'Switzer-Regular', sans-serif;
+            font-family: "Oswald-Regular", sans-serif;
             font-weight: 400;
         }
-
-    } @else if $font-family == 'gs' {
-
-        @if $font-weight == 'l' {
-            font-family: 'GeneralSans-light', sans-serif;
+    } @else if $font-family == "p" {
+        @if $font-weight == "l" {
+            font-family: "Poppins-Light", sans-serif;
             font-weight: 300;
-        } @else if $font-weight == 'm' {
-            font-family: 'GeneralSans-Medium', sans-serif;
+        } @else if $font-weight == "m" {
+            font-family: "Poppins-Medium", sans-serif;
             font-weight: 500;
         } @else {
-            font-family: 'GeneralSans-Regular', sans-serif;
+            font-family: "Poppins-Regular", sans-serif;
             font-weight: 400;
         }
     }
@@ -184,8 +178,7 @@
     (dynamic font size and line height)
 --------------------------------------- */
 
-@mixin t( $type: normal ) {
-
+@mixin t($type: normal) {
     // Default
     $fs: 16;
     $lh: 24;
@@ -197,103 +190,102 @@
     //     $lh: value;
     //     font-size: calc(var(--fs-rate) * $fs);
 
-
     /*	1) Headlines text group
     --------------------------------------- */
 
     // Headline 1
-    @if ( $type=='h1' ) {
+    @if ($type== "h1") {
         $fs: 64;
         $lh: 75;
         font-size: calc(var(--fs-rate) * toRem($fs));
 
-    // Headline 2
-    } @else if ( $type=='h2' ) {
-        $fs: 32;
-        $lh: 40;
+        // Headline 2
+    } @else if ($type== "h2") {
+        $fs: 92;
+        $lh: 92;
         font-size: calc(var(--fs-rate) * toRem($fs));
 
-    // Headline 3
-    } @else if ( $type=='h3' ) {
+        // Headline 3
+    } @else if ($type== "h3") {
         $fs: 28;
         $lh: 40;
         font-size: calc(var(--fs-rate) * toRem($fs));
 
-    // Headline 4
-    } @else if ( $type=='h4' ) {
+        // Headline 4
+    } @else if ($type== "h4") {
         $fs: 24;
         $lh: 28;
         font-size: calc(var(--fs-rate) * toRem($fs));
 
-    // Headline 5
-    } @else if ( $type=='h5' ) {
+        // Headline 5
+    } @else if ($type== "h5") {
         $fs: 18;
         $lh: 28;
         font-size: calc(var(--fs-small-rate) * toRem($fs));
 
-    // Headline 6
-    } @else if ( $type=='h6' ) {
-        $fs: 16;
-        $lh: 28;
+        // Headline 6
+    } @else if ($type== "h6") {
+        $fs: 32;
+        $lh: 8;
         font-size: calc(var(--fs-small-rate) * toRem($fs));
 
-    /*	2) Display text group
+        /*	2) Display text group
     --------------------------------------- */
 
-    // Display text 1
-    } @else if ( $type=='dt-1' ) {
+        // Display text 1
+    } @else if ($type== "dt-1") {
         $fs: 16;
         $lh: 28;
         font-size: calc(var(--fs-small-rate) * toRem($fs));
 
-    // Display text 2
-    } @else if ( $type=='dt-2' ) {
+        // Display text 2
+    } @else if ($type== "dt-2") {
         $fs: 16;
         $lh: 28;
         font-size: calc(var(--fs-small-rate) * toRem($fs));
 
-    // Display text 3
-    } @else if ( $type=='dt-3' ) {
+        // Display text 3
+    } @else if ($type== "dt-3") {
         $fs: 16;
         $lh: 28;
         font-size: calc(var(--fs-small-rate) * toRem($fs));
 
-    // Display text 4
-    } @else if ( $type=='dt-4' ) {
+        // Display text 4
+    } @else if ($type== "dt-4") {
         $fs: 16;
         $lh: 28;
         font-size: calc(var(--fs-small-rate) * toRem($fs));
 
-    /*	3) General text group
+        /*	3) General text group
     --------------------------------------- */
 
-    // Subheader
-    } @else if ( $type=='subheader' ) {
+        // Subheader
+    } @else if ($type== "subheader") {
         $fs: 20;
         $lh: 28;
         font-size: calc(var(--fs-small-rate) * toRem($fs));
 
-    // Big body text
-    } @else if ( $type=='bbt' ) {
+        // Big body text
+    } @else if ($type== "bbt") {
         $fs: 18;
         $lh: 28;
         font-size: calc(var(--fs-small-rate) * toRem($fs));
 
-    // Small body text
-    } @else if ( $type=='sbt' ) {
+        // Small body text
+    } @else if ($type== "sbt") {
         $fs: 14;
         $lh: 24;
         // Fixed px value
         font-size: 14px;
 
-    // Button text
-    } @else if ( $type=='button' ) {
+        // Button text
+    } @else if ($type== "button") {
         $fs: 14;
         $lh: 24;
         // Fixed px value
         font-size: 14px;
 
-    // Body text
+        // Body text
     } @else {
         $fs: 16;
         $lh: 24;
@@ -301,9 +293,9 @@
         font-size: 1.6rem;
     }
 
-    line-height: calc( $lh / $fs );
+    line-height: calc($lh / $fs);
 }
 
-@function toRem( $value ) {
+@function toRem($value) {
     @return math.div($value, 10) + rem;
 }

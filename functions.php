@@ -158,11 +158,13 @@ if (file_exists($modules_dir)) {
 /**
  * Theme main class.
  */
-class Theme extends Theme_Base {
+class Theme extends Theme_Base
+{
 	// traits with static methods
 	use Theme_General_Methods, Theme_Specific_Methods;
 
-	function __construct() {
+	function __construct()
+	{
 		// general config
 		$this->wp_config = array(
 			'disallow_file_edit' => true,  // disallow editation of WP themes and plugins code in WP admin
@@ -173,7 +175,7 @@ class Theme extends Theme_Base {
 			'frontend_admin_bar' => true,  // frontend admin bar for logged users
 			'feed_links_meta'    => true,  // automatic RSS feed links meta in the front-ends head
 			'xml_rpc'            => false, // allow XML RPC
-			'disable_search'     => false, // disable search functionality (if website does not contain it)
+			'disable_search'     => true, // disable search functionality (if website does not contain it)
 			'tinymce_css'        => Theme::get_asset_src('/assets/css/tinymce_styles.css'), // set custom CSS file for admin TinyMCE
 			'post_thumbnails'    => array('post', 'page'), // enable post thumbnails: true - enable everywhere, array - specific post types
 			'enable_mini_admin_bar' => false, // disable frontend admin bar
@@ -232,7 +234,8 @@ class Theme extends Theme_Base {
 	/**
 	 * Setup admin dashboard.
 	 */
-	public function setup_admin_dashboard() {
+	public function setup_admin_dashboard()
+	{
 		global $wp_meta_boxes;
 
 		// remove YoastSEO widget
@@ -274,7 +277,8 @@ $theme = new Theme();
  *
  * @return Void
  */
-function yoast_seo_metabox_position() {
+function yoast_seo_metabox_position()
+{
 	return 'low';
 }
 add_filter('wpseo_metabox_prio', 'yoast_seo_metabox_position');
@@ -284,7 +288,8 @@ add_filter('wpseo_metabox_prio', 'yoast_seo_metabox_position');
  *
  * @return Void
  */
-function wpml_reset_wpml_capabilities() {
+function wpml_reset_wpml_capabilities()
+{
 
 	if (function_exists('icl_enable_capabilities')) {
 		icl_enable_capabilities();
@@ -292,7 +297,8 @@ function wpml_reset_wpml_capabilities() {
 }
 // add_action( 'shutdown', 'wpml_reset_wpml_capabilities' );
 
-function my_admin_menu() {
+function my_admin_menu()
+{
 	add_menu_page(
 		__('Uložené formuláře', THEME_ADMIN_TEXT_DOMAIN),
 		__('Uložené formuláře', THEME_ADMIN_TEXT_DOMAIN),
@@ -307,7 +313,8 @@ function my_admin_menu() {
 add_action('admin_menu', 'my_admin_menu');
 
 
-function theme_saved_forms_page() {
+function theme_saved_forms_page()
+{
 	echo '<div class="wrap">';
 	echo '<h1>Uložené formuláře</h1>';
 	echo '<table class="wp-list-table widefat fixed striped table-view-list posts">';
@@ -336,7 +343,8 @@ function theme_saved_forms_page() {
 /**
  * Update robots.txt content.
  */
-function theme_robots_txt_update($output, $public) {
+function theme_robots_txt_update($output, $public)
+{
 
 	// Add sitemap
 	// @NOTE this is not needed, added by YOAST already
@@ -351,7 +359,8 @@ function theme_robots_txt_update($output, $public) {
 }
 // add_filter( 'robots_txt', 'theme_robots_txt_update', 99, 2 );
 
-function default_limit_upload_size($file) {
+function default_limit_upload_size($file)
+{
 
 	$size = $file['size'];
 	$size = $size / 1024;
@@ -373,7 +382,8 @@ add_filter('wp_handle_upload_prefilter', 'default_limit_upload_size');
  *
  * @return Void
  */
-function blog_public_warning() {
+function blog_public_warning()
+{
 	if (get_option("blog_public") == 0) {
 		echo '<style>
 			#menu-settings,
@@ -402,7 +412,8 @@ add_action('admin_head', 'blog_public_warning');
  *
  * @return Void
  */
-function unifer_robost_are_allowed_warning() {
+function unifer_robost_are_allowed_warning()
+{
 	$class = 'notice notice-error';
 	$message = __('Bacha!! Máš povolenou indexaci, je to určitě dobře?');
 
@@ -410,7 +421,8 @@ function unifer_robost_are_allowed_warning() {
 }
 
 add_filter('acf/fields/wysiwyg/toolbars', 'my_toolbars');
-function my_toolbars($toolbars) {
+function my_toolbars($toolbars)
+{
 	// Uncomment to view format of $toolbars
 
 	/* 	echo '< pre >';
@@ -438,7 +450,8 @@ function my_toolbars($toolbars) {
 	return $toolbars;
 }
 
-function theme_print_wysiwyg($content, $leave_p = true, $type = "zaklad") {
+function theme_print_wysiwyg($content, $leave_p = true, $type = "zaklad")
+{
 
 	$allowed_tags = array(
 		"zaklad" => array("<strong>", "<em>", "<span>", "<del>", "<a>"),
@@ -465,15 +478,16 @@ function theme_print_wysiwyg($content, $leave_p = true, $type = "zaklad") {
  * @param Array $field
  * @return Array
  */
-function theme_add_image_size_info_to_instructions( $field ) {
+function theme_add_image_size_info_to_instructions($field)
+{
 
 	$skip_key = '[skip-image-size-info]';
 	$preview_size = $field["preview_size"];
 
-	if ( strpos($field["instructions"],$skip_key) === false ) {
-		$field["instructions"] .= " ".THEME::get_image_size_info($preview_size);
+	if (strpos($field["instructions"], $skip_key) === false) {
+		$field["instructions"] .= " " . THEME::get_image_size_info($preview_size);
 	} else {
-		$field["instructions"] = str_replace( $skip_key, '', $field["instructions"] );
+		$field["instructions"] = str_replace($skip_key, '', $field["instructions"]);
 	}
 
 	return $field;
@@ -482,7 +496,8 @@ add_filter('acf/prepare_field/type=image', 'theme_add_image_size_info_to_instruc
 
 // Funkce pro deaktivaci oprvánění pro custom roli Web Manažer
 if (is_plugin_active('klient-web-manager/role-web-manager.php')) {
-	function custom_cap_for_web_manager() {
+	function custom_cap_for_web_manager()
+	{
 		return array(
 			//'read' => false,
 			//'edit_posts' => false,
@@ -526,7 +541,8 @@ if (is_plugin_active('klient-web-manager/role-web-manager.php')) {
 		);
 	}
 
-	function custom_role_restriction() {
+	function custom_role_restriction()
+	{
 		global $custom_menu_restrictions;
 
 		$custom_menu_restrictions = array(
@@ -543,7 +559,8 @@ if (is_plugin_active('klient-web-manager/role-web-manager.php')) {
 	add_action('init', 'custom_role_restriction');
 
 	// přidává práva pro gravity form
-	function change_permission_for_gravity_form() {
+	function change_permission_for_gravity_form()
+	{
 		global $permission_gravity_form;
 
 		// Pro změnu práv pro gravity form změnit hodnotu v permission_gravity_form buďto na 'entries' nebo na 'full_access'
