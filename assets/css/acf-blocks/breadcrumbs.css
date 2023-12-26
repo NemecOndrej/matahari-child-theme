@@ -1,0 +1,57 @@
+html, body {
+  --black: #333;
+  --black-rgb: hexToRGB(#333);
+  --off-white: #FDFCF8;
+  --off-white-rgb: hexToRGB(#FDFCF8);
+  --violet-accent: #9C68E2;
+  --violet-accent-rgb: hexToRGB(#9C68E2);
+}
+
+/* common border radius */
+/* disable text selection */
+section.gt-block.breadcrumbs {
+  padding: 46px 0;
+  border-top: 1px solid #B8C2CA;
+}
+section.gt-block.breadcrumbs ul {
+  list-style: none;
+  color: black;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+section.gt-block.breadcrumbs ul li {
+  padding: 0 34px 0 0;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+}
+section.gt-block.breadcrumbs ul li:after {
+  content: " ";
+  width: 14px;
+  height: 1px;
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  display: block;
+  overflow: hidden;
+  background: #9B9B9B;
+}
+section.gt-block.breadcrumbs ul li a {
+  color: #9B9B9B;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+section.gt-block.breadcrumbs ul li a:hover {
+  color: black;
+}
+section.gt-block.breadcrumbs ul li:last-of-type {
+  padding: 0;
+}
+section.gt-block.breadcrumbs ul li:last-of-type:after {
+  display: none;
+}
+section.gt-block.breadcrumbs ul li:last-of-type a {
+  color: black;
+}

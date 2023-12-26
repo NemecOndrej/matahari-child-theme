@@ -1,0 +1,64 @@
+@use "sass:math";
+
+// - Custom variables
+
+// Currently debuging?
+// $debug: true;
+// $debug-container: true;
+
+// Base unit
+// $bU: 0.8rem;
+
+
+/*	Defined widths
+--------------------------------------- */
+
+// $widths: (
+//   'wide'    : 130rem,
+//   'general' : 110rem,
+//   'narrow'  : 108rem,
+//   'thin'    : 85rem,
+//   'skinny'  : 75rem
+// );
+
+
+/*	Slider settings
+--------------------------------------- */
+// TODO: maybe separated
+
+/*	Colors
+--------------------------------------- */
+
+$colors: (
+    "primary": #031633,
+    "black": #333,
+    "off-white": #FDFCF8,
+    "violet-accent": #9C68E2
+);
+
+// $primary: var(--primary);
+// $medium-blue: var(--medium-blue);
+// $light-blue: var(--light-blue);
+// $black: var(--black);
+// $gold: var(--gold);
+// $light-gray: var(--light-gray);
+
+// $error: #E80000;
+// $warning: #D20000;
+$placeholder-color: rgba(var(--primary-rgb),0.6);
+
+// $shadow: rgba(#a8a8a8, 0.3);
+
+/*	Breakpoints
+--------------------------------------- */
+
+$small: 0;
+$smedium: 450px;
+$medium: 640px;
+$large: 1024px;
+$xlarge: 1200px;
+$xxlarge: 1680px;
+
+/*	Other
+--------------------------------------- */
+$mobile-menu-breakpoint: 970px;

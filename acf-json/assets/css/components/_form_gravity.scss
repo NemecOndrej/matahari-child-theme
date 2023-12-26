@@ -1,0 +1,118 @@
+﻿@import "../functions";
+
+/*	Gravity forms related styling
+--------------------------------------- */
+.gform_wrapper.gravity-theme {
+
+    // Validation error message above the form
+    .gform_validation_errors {
+        // display: none;
+    }
+
+    // Required fields legend
+    .gform_required_legend {
+        // display: none;
+    }
+
+    form {
+
+        &.loading {
+            position: relative;
+
+            // Some spinner
+            // &::before {
+            //     @include centering();
+
+            //     content: '';
+            //     position: absolute;
+            //     display: block;
+            //     width: 1rem;
+            //     height: 1rem;
+            //     background-color: var(--primary);
+            //     // animation: spin 1.6s infinite ease-in-out;
+            // }
+
+            // Overlay
+            // &::after {
+            //     $offset: 2.4rem;
+
+            //     @include is-overlay();
+
+            //     content: '';
+            //     z-index: 1;
+            //     transform: translate(-#{$offset},-#{$offset});
+            //     width: calc(100% + 2 * #{$offset});
+            //     height: calc(100% + 2 * #{$offset});
+            //     background-color: rgba(var(--primary-rgb),0.4);
+            // }
+        }
+
+        .gform_fields {
+            // grid-row-gap: 2.4rem;
+        }
+
+        .gfield_label {
+            // @include t();
+            // @include f(s,r);
+
+            display: block;
+            text-align: left;
+        }
+
+        .gfield_required_text {
+            // display: none;
+        }
+
+        .ginput_container_textarea {
+            font-size: 0;   // Prevent additional space after textarea field
+        }
+
+        .gfield--type-consent {
+            text-align: left;
+
+            .gfield_label {
+                display: none;
+            }
+
+            .ginput_container_consent {
+                display: inline-flex;
+                align-items: flex-start;
+                justify-content: flex-start;
+                text-align: left;
+
+                .icheckbox {
+                    flex-shrink: 0;
+                }
+
+                .gfield_consent_label {
+                    flex-grow: 1;
+                    line-height: 1.2;
+
+                    a {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+
+        .gform_footer {
+
+            // Submit input/button
+            [type="submit"] {
+                cursor: pointer;
+            }
+
+            // Default GF Spinner
+            .gform_ajax_spinner {
+                // display: none;
+            }
+        }
+
+        /*	Errors
+        --------------------------------------- */
+
+        .gfield_error {}
+
+        .gfield_validation_message {}
+    }
+}

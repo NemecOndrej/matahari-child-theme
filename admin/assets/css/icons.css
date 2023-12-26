@@ -1,0 +1,40 @@
+
+@charset "UTF-8";
+@font-face {
+  font-family: 'Font Awesome 5 Free';
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url("../fonts/fa-solid-900.eot");
+  src: url("../fonts/fa-solid-900.eot?#iefix") format("embedded-opentype"), url("../fonts/fa-solid-900.woff2") format("woff2"), url("../fonts/fa-solid-900.woff") format("woff"), url("../fonts/fa-solid-900.ttf") format("truetype"), url("../fonts/fa-solid-900.svg#fontawesome") format("svg");
+}
+
+.fa,
+.fas {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+}
+
+/* TEMPLATE - rozkopíruj a přepiš tady POSTTYPE za nazev posttypu
+#adminmenu .menu-icon-POSTTYPE div.wp-menu-image:before {
+  font-family: "Font Awesome 5 Free";
+  content: "\CODE"; //tady CODE nahrď kódem z fontawesome
+  font-size: 20px;
+  color: #f3f1f1;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  font-weight: 900;
+  width: 20px;
+  height: 20px;
+  padding: 7px 0;
+  transition: all .1s ease-in-out;
+}
+
+#adminmenu .wp-has-current-submenu .wp-submenu .wp-submenu-head.menu-icon-POSTTYPE div.wp-menu-image:before, #adminmenu .wp-menu-arrow.menu-icon-POSTTYPE div.wp-menu-image:before, #adminmenu .wp-menu-arrow div.menu-icon-POSTTYPE div.wp-menu-image:before, #adminmenu li.current a.menu-top.menu-icon-POSTTYPE div.wp-menu-image:before, #adminmenu li.wp-has-current-submenu a.wp-has-current-submenu.menu-icon-POSTTYPE div.wp-menu-image:before, .folded #adminmenu li.current.menu-top.menu-icon-POSTTYPE div.wp-menu-image:before, .folded #adminmenu li.wp-has-current-submenu.menu-icon-POSTTYPE div.wp-menu-image:before {
+  color: white !important;
+}
+KONEC šablony */

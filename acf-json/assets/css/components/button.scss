@@ -1,0 +1,26 @@
+﻿@import "../functions";
+
+a.btn,
+.editor-styles-wrapper .gt-block a.btn
+{
+    min-width: 180px;
+    padding: 11px 14px;
+    margin: 0 8px 12px 0;
+    @include inlineBlock();
+    @include border-radius(9px);
+    background: red;
+    @include font(white, 14px, 20px, bold);
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none !important;
+    @include transition();
+
+    &:hover
+    {
+        background: white;
+        color: red;
+        box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.16);
+    }
+}
+
+/* #endregion */

@@ -1,0 +1,60 @@
+﻿@import "../functions";
+
+section.gt-block.breadcrumbs
+{
+    padding: 46px 0;
+    border-top: 1px solid #B8C2CA;
+
+    ul
+    {
+        list-style: none;
+        @include font(black, 14px, 18px);
+        text-transform: uppercase;
+
+        li
+        {
+            padding: 0 34px 0 0;
+            position: relative;
+            @include inlineBlock();
+
+            &:after
+            {
+                content: " ";
+                width: 14px;
+                height: 1px;
+                position: absolute;
+                right: 10px;
+                top: 8px;
+                display: block;
+                overflow: hidden;
+                background: #9B9B9B;
+            }
+
+            a
+            {
+                color: #9B9B9B;
+                @include transition();
+
+                &:hover
+                {
+                    color: black;
+                }
+            }
+
+            &:last-of-type
+            {
+                padding: 0;
+
+                &:after
+                {
+                    display: none;
+                }
+
+                a
+                {
+                    color: black;
+                }
+            }
+        }
+    }
+}

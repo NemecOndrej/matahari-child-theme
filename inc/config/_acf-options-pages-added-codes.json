@@ -1,0 +1,83 @@
+[
+    {
+        "key": "group_5f7e21d8166b6",
+        "title": "NASTAVENÍ - Vložené kódy",
+        "fields": [
+            {
+                "key": "field_5f7e22195586b",
+                "label": "Hlavička",
+                "name": "addedcode_head",
+                "type": "textarea",
+                "instructions": "Kód, který bude vložen mezi značky &lt;head&gt; ... &lt;\/head&gt;",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "maxlength": "",
+                "rows": "",
+                "new_lines": ""
+            },
+            {
+                "key": "field_5f7e2268deb03",
+                "label": "Tělo - začátek",
+                "name": "addedcode_bodystart",
+                "type": "textarea",
+                "instructions": "Kód, který bude vložen za značku &lt;body&gt;",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "maxlength": "",
+                "rows": "",
+                "new_lines": ""
+            },
+            {
+                "key": "field_5f7e2294deb04",
+                "label": "Tělo - konec",
+                "name": "addedcode_bodyend",
+                "type": "textarea",
+                "instructions": "Kód, který bude vložen před značku &lt;\/body&gt;",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "maxlength": "",
+                "rows": "",
+                "new_lines": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "options_page",
+                    "operator": "==",
+                    "value": "acf-options-vlozene-kody"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "acf_after_title",
+        "style": "seamless",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": false
+    }
+]

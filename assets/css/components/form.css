@@ -1,0 +1,194 @@
+html, body {
+  --black: #333;
+  --black-rgb: hexToRGB(#333);
+  --off-white: #FDFCF8;
+  --off-white-rgb: hexToRGB(#FDFCF8);
+  --violet-accent: #9C68E2;
+  --violet-accent-rgb: hexToRGB(#9C68E2);
+}
+
+/* common border radius */
+/* disable text selection */
+.gt-block form,
+.editor-styles-wrapper .gt-block form {
+  position: relative;
+  /* clear */
+  /* loading */
+}
+.gt-block form:after,
+.editor-styles-wrapper .gt-block form:after {
+  content: " ";
+  width: 100%;
+  height: 0px;
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+.gt-block form:before,
+.editor-styles-wrapper .gt-block form:before {
+  content: " ";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  overflow: hidden;
+  height: 0px;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.7) url(images/loading.gif) no-repeat center center;
+  background-size: 80px auto;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+.gt-block form.loading:before,
+.editor-styles-wrapper .gt-block form.loading:before {
+  height: 100%;
+  opacity: 1;
+}
+.gt-block form input[type=text],
+.gt-block form textarea,
+.editor-styles-wrapper .gt-block form input[type=text],
+.editor-styles-wrapper .gt-block form textarea {
+  width: 100%;
+  height: 60px;
+  padding: 0 24px;
+  border: 1px solid #D3D0D0;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.gt-block form input[type=text]:hover, .gt-block form input[type=text]:focus,
+.gt-block form textarea:hover,
+.gt-block form textarea:focus,
+.editor-styles-wrapper .gt-block form input[type=text]:hover,
+.editor-styles-wrapper .gt-block form input[type=text]:focus,
+.editor-styles-wrapper .gt-block form textarea:hover,
+.editor-styles-wrapper .gt-block form textarea:focus {
+  border-color: black;
+}
+.gt-block form input[type=text]::-webkit-input-placeholder,
+.gt-block form textarea::-webkit-input-placeholder,
+.editor-styles-wrapper .gt-block form input[type=text]::-webkit-input-placeholder,
+.editor-styles-wrapper .gt-block form textarea::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #D3D0D0;
+  opacity: 1;
+}
+.gt-block form input[type=text]::-moz-placeholder,
+.gt-block form textarea::-moz-placeholder,
+.editor-styles-wrapper .gt-block form input[type=text]::-moz-placeholder,
+.editor-styles-wrapper .gt-block form textarea::-moz-placeholder { /* Firefox 19+ */
+  color: #D3D0D0;
+  opacity: 1;
+}
+.gt-block form input[type=text]:-ms-input-placeholder,
+.gt-block form textarea:-ms-input-placeholder,
+.editor-styles-wrapper .gt-block form input[type=text]:-ms-input-placeholder,
+.editor-styles-wrapper .gt-block form textarea:-ms-input-placeholder { /* IE 10+ */
+  color: #D3D0D0;
+  opacity: 1;
+}
+.gt-block form input[type=text]:-moz-placeholder,
+.gt-block form textarea:-moz-placeholder,
+.editor-styles-wrapper .gt-block form input[type=text]:-moz-placeholder,
+.editor-styles-wrapper .gt-block form textarea:-moz-placeholder { /* Firefox 18- */
+  color: #D3D0D0;
+  opacity: 1;
+}
+.gt-block form textarea,
+.editor-styles-wrapper .gt-block form textarea {
+  height: 180px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  line-height: 30px;
+}
+.gt-block form div.input,
+.editor-styles-wrapper .gt-block form div.input {
+  width: calc((100% - 12px) / 2);
+  min-height: 110px;
+  margin-right: 12px;
+  float: left;
+}
+.gt-block form div.input.last,
+.editor-styles-wrapper .gt-block form div.input.last {
+  margin-right: 0;
+}
+.gt-block form div.input.full,
+.editor-styles-wrapper .gt-block form div.input.full {
+  width: 100%;
+  margin-right: 0;
+}
+.gt-block form div.input.textarea,
+.editor-styles-wrapper .gt-block form div.input.textarea {
+  width: 100%;
+  margin: 0;
+  padding-bottom: 50px;
+}
+.gt-block form span.errorEmpty,
+.gt-block form span.errorFormat,
+.gt-block form span.errorData,
+.editor-styles-wrapper .gt-block form span.errorEmpty,
+.editor-styles-wrapper .gt-block form span.errorFormat,
+.editor-styles-wrapper .gt-block form span.errorData {
+  display: block;
+  overflow: hidden;
+  color: red;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: bold;
+  opacity: 1;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  max-height: 0px;
+  padding: 0;
+  opacity: 0;
+}
+.gt-block form .hasErrorEmpty span.errorEmpty,
+.gt-block form .hasErrorFormat span.errorFormat,
+.gt-block form .hasErrorData span.errorData,
+.editor-styles-wrapper .gt-block form .hasErrorEmpty span.errorEmpty,
+.editor-styles-wrapper .gt-block form .hasErrorFormat span.errorFormat,
+.editor-styles-wrapper .gt-block form .hasErrorData span.errorData {
+  max-height: 40px;
+  padding: 4px 0 6px 0;
+  opacity: 1;
+}
+.gt-block form .sending,
+.editor-styles-wrapper .gt-block form .sending {
+  height: 300px;
+  background: url(images/loading.gif) no-repeat center center;
+  background-size: 90px auto;
+}
+.gt-block form div.inputs,
+.editor-styles-wrapper .gt-block form div.inputs {
+  /* clear */
+}
+.gt-block form div.inputs:after,
+.editor-styles-wrapper .gt-block form div.inputs:after {
+  content: " ";
+  width: 100%;
+  height: 0px;
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+.gt-block form div.sent,
+.editor-styles-wrapper .gt-block form div.sent {
+  padding: 40px 0;
+  color: black;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+.gt-block form div.sent a,
+.editor-styles-wrapper .gt-block form div.sent a {
+  text-decoration: underline;
+}
+.gt-block form div.sent a:hover,
+.editor-styles-wrapper .gt-block form div.sent a:hover {
+  text-decoration: none;
+}

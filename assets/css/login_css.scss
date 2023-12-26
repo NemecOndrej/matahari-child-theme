@@ -1,0 +1,79 @@
+@import "functions";
+
+//Defaultní barva pozadí sekce / stránky s přihlášením.
+body.login {
+    background: #141517;
+
+    p {
+        color:#fff;
+    }
+
+    a {
+        color:#fff;
+    }
+}
+
+.login {
+
+    // Notifikace - Přihlášení úspěšné / Odhlášení
+    #login-message {
+        background-color:#1A1B1E;
+        color:rgb(144, 146, 150);
+    }
+
+    // Lost password link
+    #backtoblog a,
+    #nav a {
+        color: rgb(144, 146, 150);
+    }
+
+    // Formulář
+    form {
+        background-color: unset;
+        border:0;
+        border-radius:0;
+
+        label{ // Barva labelů / textů ve form boxu
+            color:rgb(144, 146, 150);
+        }
+
+        .wp-pwd{ // Ikonka oka
+            .button-secondary{
+                color:#FFD43B;
+            }
+        }
+
+        .submit{ // Tlačítko pro potvrzení přihlášení
+            input[type="submit"]{
+                background: #FFD43B;
+                color:#141517;
+                border:0;
+                box-shadow: 0;
+            }
+        }
+    }
+
+    //Vypnutí různých části přihlášení
+    .language-switcher { display:none; } // Přepínač jazyků
+    #backtoblog {display:none;} // Tlačítko zpět na stránku
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

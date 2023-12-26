@@ -1,0 +1,102 @@
+﻿@import "../functions";
+
+/*	Styling related to custom forms
+--------------------------------------- */
+
+.gt-block form,
+.editor-styles-wrapper .gt-block form {
+
+    /* loading */
+    &:before {
+        content: " ";
+        @include overlay();
+        height: 0px;
+        z-index: 100;
+        background: rgba(255,255,255,0.7) url(images/loading.gif) no-repeat center center;
+        background-size: 80px auto;
+        opacity: 0;
+        @include transition-custom(opacity 0.3s ease);
+    }
+    &.loading:before {
+        height: 100%;
+        opacity: 1;
+    }
+
+    div.input {
+        width: calc((100% - 12px) / 2);
+        min-height: 110px;
+        margin-right: 12px;
+        float: left;
+
+        &.last
+        {
+            margin-right: 0;
+        }
+
+        &.full
+        {
+            width: 100%;
+            margin-right: 0;
+        }
+
+        &.textarea
+        {
+            width: 100%;
+            margin: 0;
+            padding-bottom: 50px;
+        }
+    }
+
+    span.errorEmpty,
+    span.errorFormat,
+    span.errorData {
+        display: block;
+        overflow: hidden;
+        @include font(red, 14px, 16px, bold);
+        opacity: 1;
+        @include transition();
+
+        max-height: 0px;
+        padding: 0;
+        opacity: 0;
+    }
+    .hasErrorEmpty span.errorEmpty,
+    .hasErrorFormat span.errorFormat,
+    .hasErrorData span.errorData {
+        max-height: 40px;
+        padding: 4px 0 6px 0;
+        opacity: 1;
+    }
+
+    .sending {
+        height: 300px;
+        background: url(images/loading.gif) no-repeat center center;
+        background-size: 90px auto;
+    }
+
+    div.inputs {
+        /* clear */
+        &:after {
+            content: " ";
+            width: 100%;
+            height: 0px;
+            display: block;
+            overflow: hidden;
+            clear: both;
+        }
+    }
+
+    div.sent {
+        padding: 40px 0;
+        @include font(black, 20px, 30px, bold);
+        text-align: center;
+
+        a {
+            text-decoration: underline;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,74 @@
+﻿@import "../functions";
+
+.slick-arrow
+{
+    width: 6.4rem;
+    height: 6.4rem;
+    position: absolute;
+    top: 50%;
+    display: block;
+    @include border-radius(50%);
+    background-color: grey;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 2.6rem auto;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26'%3E%3Cg id='Group_2' data-name='Group 2' transform='translate(-0.162)'%3E%3Crect id='Rectangle_28' data-name='Rectangle 28' width='26' height='26' transform='translate(0.162)' fill='%23fff' opacity='0'/%3E%3Cg id='Group_1' data-name='Group 1' transform='translate(10 5)'%3E%3Cpath id='Path_1' data-name='Path 1' d='M2646.564,4075.4h0a3.2,3.2,0,0,1,0-4.528l3.342-3.342-3.342-3.342a3.2,3.2,0,0,1,0-4.527h0l7.87,7.869Z' transform='translate(-2645.626 -4059.663)' fill='%23121524'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
+    @include transition();
+
+    &:hover
+    {
+        background-color: grey;
+    }
+
+    &.prev
+    {
+        left: 0;
+        @include transform(rotate(-180deg));
+    }
+    &.next
+    {
+        right: 0;
+    }
+
+    &.slick-hidden,
+    &.slick-disabled
+    {
+        display: none;
+    }
+}
+
+.slick-dots
+{
+    width: 100%;
+    list-style: none;
+    text-align: center;
+
+    li
+    {
+        padding: 0 1.4rem;
+        @include inlineBlock();
+
+        button
+        {
+            width: 1.2rem;
+            height: 1.2rem;
+            display: block;
+            overflow: hidden;
+            white-space: nowrap;
+            text-indent: 50px;
+            @include border-radius(50%);
+            background: #C4C6CF;
+            @include transition();
+            cursor: pointer;
+
+            &:hover
+            {
+                background: black;
+            }
+        }
+        &.slick-active button
+        {
+            background: black;
+        }
+    }
+}

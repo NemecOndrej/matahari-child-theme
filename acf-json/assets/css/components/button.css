@@ -1,0 +1,39 @@
+html, body {
+  --black: #333;
+  --black-rgb: hexToRGB(#333);
+  --off-white: #FDFCF8;
+  --off-white-rgb: hexToRGB(#FDFCF8);
+  --violet-accent: #9C68E2;
+  --violet-accent-rgb: hexToRGB(#9C68E2);
+}
+
+/* common border radius */
+/* disable text selection */
+a.btn,
+.editor-styles-wrapper .gt-block a.btn {
+  min-width: 180px;
+  padding: 11px 14px;
+  margin: 0 8px 12px 0;
+  display: inline-block;
+  vertical-align: top;
+  border-radius: 9px;
+  background: red;
+  color: white;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none !important;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+a.btn:hover,
+.editor-styles-wrapper .gt-block a.btn:hover {
+  background: white;
+  color: red;
+  -webkit-box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.16);
+          box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.16);
+}
+
+/* #endregion */

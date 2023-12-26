@@ -1,0 +1,65 @@
+/*	Defined widths
+--------------------------------------- */
+/*	Slider settings
+--------------------------------------- */
+/*	Colors
+--------------------------------------- */
+/*	Breakpoints
+--------------------------------------- */
+/*	Other
+--------------------------------------- */
+/* common border radius */
+/* disable text selection */
+/*	Font / Text Mixins
+======================================================================== */
+/*	Font family mixin
+    Examples:
+    @include f(s,r);
+    @include f(gs,l);
+--------------------------------------- */
+/*	Text mixin
+    (dynamic font size and line height)
+--------------------------------------- */
+body.login {
+  background: #141517;
+}
+body.login p {
+  color: #fff;
+}
+body.login a {
+  color: #fff;
+}
+
+.login #login-message {
+  background-color: #1A1B1E;
+  color: rgb(144, 146, 150);
+}
+.login #backtoblog a,
+.login #nav a {
+  color: rgb(144, 146, 150);
+}
+.login form {
+  background-color: unset;
+  border: 0;
+  border-radius: 0;
+}
+.login form label {
+  color: rgb(144, 146, 150);
+}
+.login form .wp-pwd .button-secondary {
+  color: #FFD43B;
+}
+.login form .submit input[type=submit] {
+  background: #FFD43B;
+  color: #141517;
+  border: 0;
+  -webkit-box-shadow: 0;
+          box-shadow: 0;
+}
+.login .language-switcher {
+  display: none;
+}
+.login #backtoblog {
+  display: none;
+}
+/*# sourceMappingURL=login_css.css.map */

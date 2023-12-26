@@ -1,0 +1,28 @@
+﻿@import "functions";
+// @import "adminbar";
+
+/* PLUGINS */
+@import url(../js/library/slick/slick.scss);
+
+/* UTILITIES */
+@import "util";
+
+/* TYPOGRAPHY */
+@import "typography";
+
+/* MAIN DESIGN */
+@import "design";
+
+/* COMPONENTS */
+@import "components/button.scss";
+@import "components/icheckbox.scss";
+@import "components/slick.scss";
+@import "components/form.scss";
+
+/* PAGES (better to include direct CSS file on the page) */
+/*@import url(pages/XXX.scss);*/
+
+/* BLOCKS  (better to include direct CSS file with the block) */
+@import "acf-blocks/general.scss";
+/*@import url(blocks/XXX.scss);*/
+

@@ -1,0 +1,37 @@
+/*	Admin bar custom styling
+======================================================================== */
+#wpadminbar {
+    width: 52px !important;
+    min-width: initial !important;
+    border-radius: 0 0 50%;
+    background-color: darkcyan;
+
+    @media (min-width: 783px) {
+        width: 32px !important;
+        height: 32px !important;
+    }
+    @media (max-width: 600px) {
+        display: none !important;
+    }
+}
+
+    #wp-toolbar {
+
+        li {
+            display: none;
+        }
+
+        #wp-admin-bar-wp-logo,
+        #wp-admin-bar-wp-logo li {
+            display: block;
+        }
+    }
+
+/*	Prevent admin bar space reservation
+--------------------------------------- */
+html{
+    margin-top:0!important;
+}
+body.admin-bar .site-header {
+    top: 0 !important;
+}

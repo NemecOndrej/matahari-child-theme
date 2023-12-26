@@ -1,0 +1,23 @@
+﻿@import "functions";
+
+a.btn
+{
+    min-width: 180px;
+    padding: 11px 14px !important;
+    margin: 0 8px 12px 0 !important;
+    @include inlineBlock();
+    @include border-radius(9px);
+    border-radius: 9px !important;
+    background: red !important;
+    @include font(white, 14px, 20px, bold);
+    text-transform: uppercase;
+    text-align: center;
+    @include transition();
+    text-decoration: none !important;
+
+    &:hover
+    {
+        background: white;
+        color: red;
+    }
+}

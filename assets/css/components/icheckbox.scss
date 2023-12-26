@@ -1,0 +1,73 @@
+﻿@import "../functions";
+
+.icheckbox {
+
+    /*	Component settings
+    --------------------------------------- */
+
+    // General
+    $size: 1.8rem;
+    $space: 1.3rem;
+
+    // Border
+    $border-c: black;
+    $border-c-hover: green;
+    $border-c-checked: green;
+    $border: 1px solid $border-c;
+    $border-radius: 0.4rem;
+
+    // Background
+    $bg: white;
+    $bg-hover: $bg;
+    $bg-checked: green;
+
+
+    /*	Styling
+    --------------------------------------- */
+
+    @include transition();
+
+    width: $size;
+    height: $size;
+    margin: 0 $space 0 0;
+    display: inline-block;
+    vertical-align: top;
+    background: $bg;
+    border: $border;
+    border-radius: $border-radius;
+    cursor: pointer;
+
+    // Checkmark
+    &:after {
+        @include overlay();
+        @include transition();
+
+        content: " ";
+        background: {
+            image: url("../images/checkmark.svg");
+            repeat: no-repeat;
+            position: center center;
+            size: 80%;
+        }
+        opacity: 0;
+    }
+
+
+    /*	Hover & checked states
+    --------------------------------------- */
+
+    &.hover,
+    &:hover {
+        background: $bg-hover;
+        border-color: $border-c-hover;
+    }
+    &.checked {
+        background: $bg-checked;
+        border-color: $border-c-checked;
+
+        // Show the checkmark
+        &:after {
+            opacity: 1;
+        }
+    }
+}
