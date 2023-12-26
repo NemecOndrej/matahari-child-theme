@@ -86,6 +86,8 @@ h6,
 // Subheader
 .subheader {
     @include t(subheader);
+    @include f(p, m);
+    color: white;
 }
 
 // Body text

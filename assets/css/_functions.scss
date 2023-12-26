@@ -262,7 +262,7 @@
         // Subheader
     } @else if ($type== "subheader") {
         $fs: 20;
-        $lh: 28;
+        $lh: 30;
         font-size: calc(var(--fs-small-rate) * toRem($fs));
 
         // Big body text

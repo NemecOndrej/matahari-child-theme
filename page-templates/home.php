@@ -24,6 +24,15 @@ get_header();
     <div class="hero-section__col-right">
         <div class="hero-section__col-right-second-box">
             <div class="box-gradient"></div>
+            <div class="box-content">
+                <div class="box-content__text">
+                    <p class="subtitle">Watch Our</p>
+                    <p class="subheader">Profile Video</p>
+                </div>
+                <div class="box-content__icon-play">
+                    <a href="#"><?php Theme::read_svg(THEME_PATH . "/assets/images/play-button.svg") ?></a>
+                </div>
+            </div>
         </div>
         <div class="hero-section__col-right-third-box"></div>
     </div>
