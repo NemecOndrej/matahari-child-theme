@@ -107,23 +107,23 @@
 @font-face {
   font-display: swap;
   font-family: "Oswald-Regular";
-  src: url("../fonts/Oswald-Regular.ttf") format("ttf");
+  src: url("../fonts/Oswald-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 /* Oswald - 500 */
 @font-face {
   font-display: swap;
-  font-family: "Osvald-Semibold";
-  src: url("../fonts/Oswald-SemiBold.ttf") format("ttf");
+  font-family: "Oswald-Semibold";
+  src: url("../fonts/Oswald-SemiBold.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
 }
 /* Oswald - 700 */
 @font-face {
   font-display: swap;
-  font-family: "Osvald-Bold";
-  src: url("../fonts/Oswald-Bold.ttf") format("ttf");
+  font-family: "Oswald-Bold";
+  src: url("../fonts/Oswald-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
@@ -131,7 +131,7 @@
 @font-face {
   font-display: swap;
   font-family: "Poppins-Light";
-  src: url("../fonts/Poppins-Light.ttf") format("ttf");
+  src: url("../fonts/Poppins-Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
 }
@@ -139,7 +139,7 @@
 @font-face {
   font-display: swap;
   font-family: "Poppins-Regular";
-  src: url("../fonts/Poppins-Regular.ttf") format("ttf");
+  src: url("../fonts/Poppins-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
@@ -147,7 +147,7 @@
 @font-face {
   font-display: swap;
   font-family: "Poppins-Medium";
-  src: url("../fonts/Poppins-Medium.ttf") format("ttf");
+  src: url("../fonts/Poppins-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
 }
@@ -167,7 +167,7 @@ h2,
   --------------------------------------- */
   font-size: calc(var(--fs-rate) * 9.2rem);
   line-height: 1;
-  font-family: "Osvald-Bold", sans-serif;
+  font-family: "Oswald-Bold", sans-serif;
   font-weight: 700;
 }
 
@@ -175,16 +175,20 @@ h3,
 .h3 {
   /*	1) Headlines text group
   --------------------------------------- */
-  font-size: calc(var(--fs-rate) * 2.8rem);
-  line-height: 1.4285714286;
+  font-size: calc(var(--fs-rate) * 10rem);
+  line-height: 1;
+  font-family: "Oswald-Bold", sans-serif;
+  font-weight: 700;
 }
 
 h4,
 .h4 {
   /*	1) Headlines text group
   --------------------------------------- */
-  font-size: calc(var(--fs-rate) * 2.4rem);
-  line-height: 1.1666666667;
+  font-size: calc(var(--fs-rate) * 4rem);
+  line-height: 1.25;
+  font-family: "Oswald-Bold", sans-serif;
+  font-weight: 700;
 }
 
 h5,
@@ -210,20 +214,28 @@ h6,
 .dt-1 {
   /*	1) Headlines text group
   --------------------------------------- */
-  font-size: calc(var(--fs-small-rate) * 1.6rem);
-  line-height: 1.75;
+  font-size: calc(var(--fs-small-rate) * 2rem);
+  line-height: 1.5;
+  font-family: "Poppins-Medium", sans-serif;
+  font-weight: 500;
+  color: var(--Blue, #4997d3);
 }
 .dt-2 {
   /*	1) Headlines text group
   --------------------------------------- */
   font-size: calc(var(--fs-small-rate) * 1.6rem);
   line-height: 1.75;
+  font-family: "Poppins-Regular", sans-serif;
+  font-weight: 400;
+  color: var(--Black, #222);
 }
 .dt-3 {
   /*	1) Headlines text group
   --------------------------------------- */
-  font-size: calc(var(--fs-small-rate) * 1.6rem);
-  line-height: 1.75;
+  font-size: calc(var(--fs-small-rate) * 1.5rem);
+  line-height: 1.8666666667;
+  font-family: "Poppins-Regular", sans-serif;
+  font-weight: 400;
 }
 .dt-4 {
   /*	1) Headlines text group
@@ -618,6 +630,11 @@ svg {
   -webkit-filter: drop-shadow(5px 20px 50px rgba(0, 0, 0, 0.1));
           filter: drop-shadow(5px 20px 50px rgba(0, 0, 0, 0.1));
 }
+.site-header ul li a:hover {
+  color: var(--Blue, #4997d3);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
 
 .site-header__search {
   position: relative;
@@ -660,6 +677,17 @@ svg {
 .site-header__search button:hover {
   cursor: pointer;
   color: red;
+}
+
+.btn-primary {
+  width: 100%;
+  max-width: 13.9rem;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 1rem;
+  background: var(--Blue, #4997d3);
 }
 
 /* MOBILE VERSION */

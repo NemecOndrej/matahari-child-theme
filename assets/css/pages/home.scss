@@ -3,28 +3,36 @@
 .hero-section {
     display: flex;
     gap: 3.2rem;
+    padding-bottom: 16rem;
 
     &__col-left {
         width: 100%;
         max-width: 108.3rem;
-        height: 64.6rem;
         position: relative;
         display: flex;
         align-items: center;
         flex-shrink: 0;
 
         border-radius: 5rem;
+        box-shadow: 5px 20px 50px 0px rgba(0, 0, 0, 0.1);
         background: #d9d9d9;
-        background-image: url("../../images/main-surf.png");
-        background-size: cover;
-        background-repeat: no-repeat;
+
+        img {
+            position: absolute;
+            width: 100%;
+            height: 64.6rem;
+            border-radius: 5rem;
+            z-index: 1;
+        }
 
         &-text {
+            position: relative;
             display: flex;
             flex-direction: column;
             justify-content: center;
             padding: 6.7rem 0 6.7rem 7rem;
             gap: 1.6rem;
+            z-index: 2;
 
             .text-one,
             .text-two {
@@ -47,14 +55,16 @@
             display: flex;
             width: 100%;
             max-width: 40.5rem;
-            height: 30rem;
             z-index: 1;
 
             border-radius: 2.5rem;
+            box-shadow: 5px 20px 50px 0px rgba(0, 0, 0, 0.1);
             background: #d9d9d9;
-            background-image: url("../../images/video.png");
-            background-repeat: no-repeat;
-            background-size: cover;
+
+            img {
+                width: 100%;
+                border-radius: 2.5rem;
+            }
 
             .box-gradient {
                 width: 100%;
@@ -96,6 +106,23 @@
                     max-width: 5.4rem;
                     height: 5.4rem;
                     flex-shrink: 0;
+
+                    a {
+                        &:hover {
+                            svg {
+                                g {
+                                    circle {
+                                        stroke: var(--Blue, #4997d3);
+                                        @include transition();
+                                    }
+                                    path {
+                                        fill: var(--Blue, #4997d3);
+                                        @include transition();
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -104,10 +131,103 @@
             display: flex;
             width: 100%;
             max-width: 40.5rem;
-            height: 32.2rem;
+            height: 25.2rem;
 
             border-radius: 2.5rem;
-            background: #d9d9d9;
+            box-shadow: 5px 20px 50px 0px rgba(0, 0, 0, 0.1);
+            background: var(--Black, #222);
+
+            .text-content {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                padding: 2.8rem 3rem;
+
+                .subheader {
+                    @include f(p, l);
+                    color: var(--White, #fff);
+                }
+            }
+        }
+    }
+}
+
+.about-us {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 6.4rem;
+
+    &__header {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 2.4rem;
+    }
+
+    &__content {
+        width: 100%;
+        max-width: 152rem;
+        display: flex;
+        gap: 3rem;
+
+        &-image {
+            img {
+                width: 100%;
+                height: 76.6rem;
+                flex-shrink: 0;
+
+                border-radius: 2.5rem;
+                box-shadow: 5px 20px 50px 0px rgba(0, 0, 0, 0.1);
+            }
+        }
+
+        &-right {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 2.4rem;
+
+            &-image {
+                img {
+                    max-width: 107.9rem;
+                    height: 54.1rem;
+                    flex-shrink: 0;
+
+                    border-radius: 2.5rem;
+                    box-shadow: 5px 20px 50px 0px rgba(0, 0, 0, 0.1);
+                }
+            }
+        }
+
+        .header-description {
+            width: 100%;
+            display: flex;
+            gap: 9.6rem;
+
+            .text-col-left {
+                width: 100%;
+                max-width: 50rem;
+            }
+
+            .text-col-right {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+
+                .dt-2 {
+                    opacity: 0.75;
+                }
+
+                .btn-primary {
+                    @include f(p, m);
+                    color: var(--White, #fff);
+                    font-size: 1.6rem;
+                    font-style: normal;
+                    line-height: calc(1.6rem / 2.8rem);
+                }
+            }
         }
     }
 }

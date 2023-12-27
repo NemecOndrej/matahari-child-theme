@@ -346,6 +346,11 @@ body.admin-bar {
                 color: black;
                 font-size: 1.6rem;
                 filter: drop-shadow(5px 20px 50px rgba(0, 0, 0, 0.1));
+
+                &:hover {
+                    color: var(--Blue, #4997d3);
+                    @include transition();
+                }
             }
         }
     }
@@ -397,6 +402,17 @@ body.admin-bar {
             color: red;
         }
     }
+}
+
+.btn-primary {
+    width: 100%;
+    max-width: 13.9rem;
+    flex-shrink: 0;
+    padding: 2rem;
+
+    text-align: center;
+    border-radius: 1rem;
+    background: var(--Blue, #4997d3);
 }
 
 /* MOBILE VERSION */

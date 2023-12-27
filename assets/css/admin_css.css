@@ -2,23 +2,23 @@
 @font-face {
   font-display: swap;
   font-family: "Oswald-Regular";
-  src: url("../fonts/Oswald-Regular.ttf") format("ttf");
+  src: url("../fonts/Oswald-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 /* Oswald - 500 */
 @font-face {
   font-display: swap;
-  font-family: "Osvald-Semibold";
-  src: url("../fonts/Oswald-SemiBold.ttf") format("ttf");
+  font-family: "Oswald-Semibold";
+  src: url("../fonts/Oswald-SemiBold.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
 }
 /* Oswald - 700 */
 @font-face {
   font-display: swap;
-  font-family: "Osvald-Bold";
-  src: url("../fonts/Oswald-Bold.ttf") format("ttf");
+  font-family: "Oswald-Bold";
+  src: url("../fonts/Oswald-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
@@ -26,7 +26,7 @@
 @font-face {
   font-display: swap;
   font-family: "Poppins-Light";
-  src: url("../fonts/Poppins-Light.ttf") format("ttf");
+  src: url("../fonts/Poppins-Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
 }
@@ -34,7 +34,7 @@
 @font-face {
   font-display: swap;
   font-family: "Poppins-Regular";
-  src: url("../fonts/Poppins-Regular.ttf") format("ttf");
+  src: url("../fonts/Poppins-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
@@ -42,7 +42,7 @@
 @font-face {
   font-display: swap;
   font-family: "Poppins-Medium";
-  src: url("../fonts/Poppins-Medium.ttf") format("ttf");
+  src: url("../fonts/Poppins-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
 }

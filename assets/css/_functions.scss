@@ -151,10 +151,10 @@
     // Switzer
     @if $font-family == "o" {
         @if $font-weight == "b" {
-            font-family: "Osvald-Bold", sans-serif;
+            font-family: "Oswald-Bold", sans-serif;
             font-weight: 700;
         } @else if $font-weight == "sb" {
-            font-family: "Osvald-Semibold", sans-serif;
+            font-family: "Oswald-Semibold", sans-serif;
             font-weight: 500;
         } @else {
             font-family: "Oswald-Regular", sans-serif;
@@ -207,14 +207,14 @@
 
         // Headline 3
     } @else if ($type== "h3") {
-        $fs: 28;
-        $lh: 40;
+        $fs: 100;
+        $lh: 100;
         font-size: calc(var(--fs-rate) * toRem($fs));
 
         // Headline 4
     } @else if ($type== "h4") {
-        $fs: 24;
-        $lh: 28;
+        $fs: 40;
+        $lh: 50;
         font-size: calc(var(--fs-rate) * toRem($fs));
 
         // Headline 5
@@ -234,8 +234,8 @@
 
         // Display text 1
     } @else if ($type== "dt-1") {
-        $fs: 16;
-        $lh: 28;
+        $fs: 20;
+        $lh: 30;
         font-size: calc(var(--fs-small-rate) * toRem($fs));
 
         // Display text 2
@@ -246,7 +246,7 @@
 
         // Display text 3
     } @else if ($type== "dt-3") {
-        $fs: 16;
+        $fs: 15;
         $lh: 28;
         font-size: calc(var(--fs-small-rate) * toRem($fs));
 
