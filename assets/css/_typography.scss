@@ -84,6 +84,7 @@ h6,
     // Display text 4
     &-4 {
         @include t(dt-4);
+        @include f(p, l);
     }
 }
 

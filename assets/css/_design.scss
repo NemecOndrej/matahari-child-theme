@@ -280,8 +280,14 @@ svg {
 
 /* #region SITE HEADER ======================================================================= */
 
+body {
+    padding-top: var(--site-header-height);
+}
+
 body.admin-bar {
     .site-header {
+        top: 32px;
+
         @include media(782px) {
             top: 46px;
         }
@@ -290,12 +296,13 @@ body.admin-bar {
 
 .site-header {
     width: 100%;
-    position: relative;
+    position: fixed;
     left: 0;
     top: 0;
     z-index: 500;
-    padding: 2.5rem 0;
+    padding: 1.5rem 0;
     @include transition();
+    background: var(--White, #fff);
 
     &.scrolled {
         @include box-shadow(0px 25px 37px rgba(0, 0, 0, 0.05));
@@ -311,9 +318,9 @@ body.admin-bar {
         flex: 0 0 20rem;
 
         a {
-            svg {
+            img {
                 width: 100%;
-                max-width: 6.3rem;
+                max-width: 5rem;
                 height: auto;
                 flex-shrink: 0;
             }
@@ -413,6 +420,20 @@ body.admin-bar {
     text-align: center;
     border-radius: 1rem;
     background: var(--Blue, #4997d3);
+}
+
+.btn-primary-white {
+    @include f(p, m);
+
+    width: 100%;
+    max-width: 13.9rem;
+    flex-shrink: 0;
+    padding: 2rem;
+
+    text-align: center;
+    border-radius: 1rem;
+    background: var(--White, #fff);
+    color: var(--Black, #222);
 }
 
 /* MOBILE VERSION */

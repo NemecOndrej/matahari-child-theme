@@ -34,7 +34,7 @@
         <div class="container">
             <div class="site-header__left-col">
                 <a href="<?php echo apply_filters('wpml_home_url', get_option('home')); ?>" class="logo" title="<?php echo esc_attr(get_bloginfo('name')); ?>">
-                    <?php Theme::read_svg(THEME_PATH . "/assets/images/logo-black.svg"); ?>
+                    <?php Theme::print_image('300', 'fullsize') ?>
                 </a>
             </div>
             <div class="site-header__right-col">

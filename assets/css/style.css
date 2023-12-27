@@ -244,6 +244,8 @@ h6,
   /*	3) General text group
   --------------------------------------- */
   line-height: 1.75;
+  font-family: "Poppins-Light", sans-serif;
+  font-weight: 300;
 }
 
 /*	2) General text group
@@ -559,6 +561,13 @@ svg {
 
 /* #endregion */
 /* #region SITE HEADER ======================================================================= */
+body {
+  padding-top: var(--site-header-height);
+}
+
+body.admin-bar .site-header {
+  top: 32px;
+}
 @media screen and (max-width: 782px) {
   body.admin-bar .site-header {
     top: 46px;
@@ -567,13 +576,14 @@ svg {
 
 .site-header {
   width: 100%;
-  position: relative;
+  position: fixed;
   left: 0;
   top: 0;
   z-index: 500;
-  padding: 2.5rem 0;
+  padding: 1.5rem 0;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  background: var(--White, #fff);
 }
 .site-header.scrolled {
   -webkit-box-shadow: 0px 25px 37px rgba(0, 0, 0, 0.05);
@@ -594,9 +604,9 @@ svg {
       -ms-flex: 0 0 20rem;
           flex: 0 0 20rem;
 }
-.site-header .site-header__left-col a svg {
+.site-header .site-header__left-col a img {
   width: 100%;
-  max-width: 6.3rem;
+  max-width: 5rem;
   height: auto;
   -ms-flex-negative: 0;
       flex-shrink: 0;
@@ -688,6 +698,20 @@ svg {
   text-align: center;
   border-radius: 1rem;
   background: var(--Blue, #4997d3);
+}
+
+.btn-primary-white {
+  font-family: "Poppins-Medium", sans-serif;
+  font-weight: 500;
+  width: 100%;
+  max-width: 13.9rem;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 1rem;
+  background: var(--White, #fff);
+  color: var(--Black, #222);
 }
 
 /* MOBILE VERSION */
