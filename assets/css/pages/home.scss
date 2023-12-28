@@ -8,11 +8,10 @@
 
     &__col-left {
         width: 100%;
-        max-width: 108.3rem;
         position: relative;
         display: flex;
         align-items: center;
-        flex-shrink: 0;
+        flex: 1;
 
         border-radius: 5rem;
         box-shadow: 5px 20px 50px 0px rgba(0, 0, 0, 0.1);
@@ -20,7 +19,7 @@
 
         img {
             width: 100%;
-            height: 64.6rem;
+            height: 100%;
             border-radius: 5rem;
             z-index: 1;
         }
@@ -45,10 +44,12 @@
 
     &__col-right {
         width: 100%;
-
+        max-width: 40.5rem;
         display: flex;
         flex-direction: column;
+        flex-wrap: wrap;
         gap: 3.2rem;
+        flex: 1 1 0;
 
         &-second-box {
             position: relative;
@@ -173,7 +174,7 @@
         text-align: center;
 
         h2 {
-            font-size: 15rem;
+            font-size: 14rem;
             text-transform: uppercase;
             color: var(--Light-Gray, #f6f6f6);
         }
@@ -208,6 +209,10 @@
         gap: 3rem;
 
         &-image {
+            width: 100%;
+            display: flex;
+            flex: 1 1 15rem;
+
             img {
                 width: 100%;
                 height: 76.6rem;
@@ -221,6 +226,7 @@
         &-right {
             width: 100%;
             display: flex;
+            flex: 1 0 80rem;
             flex-direction: column;
             gap: 2.4rem;
 
@@ -228,7 +234,7 @@
                 @include transition();
 
                 img {
-                    max-width: 107.9rem;
+                    width: 100%;
                     height: 54.1rem;
                     flex-shrink: 0;
 
@@ -278,7 +284,7 @@
         justify-content: center;
 
         h2 {
-            font-size: 15rem;
+            font-size: 14rem;
             text-transform: uppercase;
             color: var(--Light-Gray, #f6f6f6);
         }
@@ -306,6 +312,7 @@
         width: 100%;
         display: flex;
         justify-content: space-around;
+        flex-wrap: wrap;
 
         &-box {
             display: flex;
@@ -469,6 +476,278 @@
             .dt-1,
             h3 {
                 color: var(--White, #fff);
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1125px) {
+    .hero-section {
+        flex-direction: column;
+
+        &__col-right {
+            flex-direction: row;
+            justify-content: center;
+            max-width: 100%;
+
+            &-third-box {
+                height: auto;
+            }
+        }
+    }
+
+    .about-us {
+        &__content {
+            &-image {
+                display: none;
+            }
+
+            &-right {
+                flex: 1;
+
+                &-image {
+                    img {
+                        height: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .promo-section {
+        &__image {
+            img {
+                height: auto;
+            }
+        }
+
+        &__content {
+            &-header {
+                .dt-1,
+                h3 {
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .hero-section {
+        &__col-right {
+            &-second-box {
+                max-width: 35.5rem;
+            }
+            &-third-box {
+                max-width: 35.5rem;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .our-values {
+        padding-bottom: 5rem;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .hero-section {
+        &__col-left {
+            &-text {
+                .text-one {
+                    h2 {
+                        font-size: 7.2rem;
+                    }
+                }
+                .text-two {
+                    h2 {
+                        font-size: 7.2rem;
+                    }
+                }
+            }
+        }
+        &__col-right {
+            &-second-box {
+                max-width: 100%;
+
+                .box-gradient {
+                    max-width: 100%;
+                }
+            }
+            &-third-box {
+                max-width: 100%;
+
+                .text-content {
+                    gap: 3rem;
+                }
+            }
+        }
+    }
+
+    .about-us {
+        &__header {
+            h2 {
+                font-size: 12rem;
+            }
+
+            .text-in-header {
+            }
+        }
+
+        &__content {
+            .header-description {
+                flex-direction: column;
+                gap: 3rem;
+
+                .text-col-left {
+                    max-width: 100%;
+                }
+
+                .text-col-right {
+                }
+            }
+        }
+    }
+
+    .our-values {
+        gap: 3rem;
+        &__header {
+            h2 {
+                font-size: 12rem;
+                text-align: center;
+            }
+        }
+    }
+
+    .promo-section {
+        &__content {
+            padding: 2rem;
+            &-header {
+                h3 {
+                    font-size: 6rem;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .hero-section {
+        &__col-left {
+            img {
+                height: 30rem;
+            }
+            &-text {
+                padding: 6.7rem 0 6.7rem 2rem;
+
+                .text-one {
+                    h2 {
+                        font-size: 5.2rem;
+                    }
+                }
+                .text-two {
+                    h2 {
+                        font-size: 5.2rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .about-us {
+        gap: 3rem;
+
+        &__header {
+            h2 {
+                font-size: 9rem;
+            }
+
+            .text-in-header {
+                font-size: 1.4rem;
+            }
+        }
+
+        &__content {
+            .header-description {
+                .text-col-left {
+                    h3 {
+                        font-size: 6rem;
+                    }
+                }
+
+                .text-col-right {
+                }
+            }
+        }
+    }
+
+    .our-values {
+        &__header {
+            h2 {
+                font-size: 9rem;
+            }
+        }
+    }
+
+    .promo-section {
+        &__content {
+            gap: 1.4rem;
+            &-header {
+                gap: 1.4rem;
+                h3 {
+                    font-size: 4rem;
+                }
+            }
+        }
+
+        .btn-primary-white {
+            padding: 1rem;
+        }
+    }
+}
+@media only screen and (max-width: 395px) {
+    .promo-section {
+        &__content {
+            &-header {
+                h3 {
+                    font-size: 3rem;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .about-us {
+        &__header {
+            h2 {
+                font-size: 7rem;
+            }
+
+            .text-in-header {
+                top: 30%;
+            }
+        }
+
+        &__content {
+            .header-description {
+                .text-col-left {
+                    h3 {
+                        font-size: 4rem;
+                    }
+                }
+
+                .text-col-right {
+                }
+            }
+        }
+    }
+    .our-values {
+        &__header {
+            h2 {
+                font-size: 7rem;
             }
         }
     }

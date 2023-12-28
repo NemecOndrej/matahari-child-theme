@@ -30,7 +30,6 @@
 }
 .hero-section__col-left {
   width: 100%;
-  max-width: 108.3rem;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -38,8 +37,9 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   border-radius: 5rem;
   -webkit-box-shadow: 5px 20px 50px 0px rgba(0, 0, 0, 0.1);
           box-shadow: 5px 20px 50px 0px rgba(0, 0, 0, 0.1);
@@ -47,7 +47,7 @@
 }
 .hero-section__col-left img {
   width: 100%;
-  height: 64.6rem;
+  height: 100%;
   border-radius: 5rem;
   z-index: 1;
 }
@@ -75,6 +75,7 @@
 }
 .hero-section__col-right {
   width: 100%;
+  max-width: 40.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -82,7 +83,12 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   gap: 3.2rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 0px;
+          flex: 1 1 0;
 }
 .hero-section__col-right-second-box {
   position: relative;
@@ -221,7 +227,7 @@
   text-align: center;
 }
 .about-us__header h2 {
-  font-size: 15rem;
+  font-size: 14rem;
   text-transform: uppercase;
   color: var(--Light-Gray, #f6f6f6);
 }
@@ -253,6 +259,15 @@
   display: flex;
   gap: 3rem;
 }
+.about-us__content-image {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 15rem;
+          flex: 1 1 15rem;
+}
 .about-us__content-image img {
   width: 100%;
   height: 76.6rem;
@@ -267,6 +282,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 80rem;
+          flex: 1 0 80rem;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -278,7 +296,7 @@
   transition: all 0.3s ease;
 }
 .about-us__content-right-image img {
-  max-width: 107.9rem;
+  width: 100%;
   height: 54.1rem;
   -ms-flex-negative: 0;
       flex-shrink: 0;
@@ -338,7 +356,7 @@
           justify-content: center;
 }
 .our-values__header h2 {
-  font-size: 15rem;
+  font-size: 14rem;
   text-transform: uppercase;
   color: var(--Light-Gray, #f6f6f6);
 }
@@ -366,6 +384,8 @@
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 .our-values__items-box {
   display: -webkit-box;
@@ -508,5 +528,162 @@
 .promo-section__content-header .dt-1,
 .promo-section__content-header h3 {
   color: var(--White, #fff);
+}
+
+@media only screen and (max-width: 1125px) {
+  .hero-section {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .hero-section__col-right {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    max-width: 100%;
+  }
+  .hero-section__col-right-third-box {
+    height: auto;
+  }
+  .about-us__content-image {
+    display: none;
+  }
+  .about-us__content-right {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+  .about-us__content-right-image img {
+    height: auto;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .promo-section__image img {
+    height: auto;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .hero-section__col-right-second-box {
+    max-width: 35.5rem;
+  }
+  .hero-section__col-right-third-box {
+    max-width: 35.5rem;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .our-values {
+    padding-bottom: 5rem;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .hero-section__col-left-text .text-one h2 {
+    font-size: 7.2rem;
+  }
+  .hero-section__col-left-text .text-two h2 {
+    font-size: 7.2rem;
+  }
+  .hero-section__col-right-second-box {
+    max-width: 100%;
+  }
+  .hero-section__col-right-second-box .box-gradient {
+    max-width: 100%;
+  }
+  .hero-section__col-right-third-box {
+    max-width: 100%;
+  }
+  .hero-section__col-right-third-box .text-content {
+    gap: 3rem;
+  }
+  .about-us__header h2 {
+    font-size: 12rem;
+  }
+  .about-us__content .header-description {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 3rem;
+  }
+  .about-us__content .header-description .text-col-left {
+    max-width: 100%;
+  }
+  .our-values {
+    gap: 3rem;
+  }
+  .our-values__header h2 {
+    font-size: 12rem;
+    text-align: center;
+  }
+  .promo-section__content {
+    padding: 2rem;
+  }
+  .promo-section__content-header h3 {
+    font-size: 6rem;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .hero-section__col-left img {
+    height: 30rem;
+  }
+  .hero-section__col-left-text {
+    padding: 6.7rem 0 6.7rem 2rem;
+  }
+  .hero-section__col-left-text .text-one h2 {
+    font-size: 5.2rem;
+  }
+  .hero-section__col-left-text .text-two h2 {
+    font-size: 5.2rem;
+  }
+  .about-us {
+    gap: 3rem;
+  }
+  .about-us__header h2 {
+    font-size: 9rem;
+  }
+  .about-us__header .text-in-header {
+    font-size: 1.4rem;
+  }
+  .about-us__content .header-description .text-col-left h3 {
+    font-size: 6rem;
+  }
+  .our-values__header h2 {
+    font-size: 9rem;
+  }
+  .promo-section__content {
+    gap: 1.4rem;
+  }
+  .promo-section__content-header {
+    gap: 1.4rem;
+  }
+  .promo-section__content-header h3 {
+    font-size: 4rem;
+  }
+  .promo-section .btn-primary-white {
+    padding: 1rem;
+  }
+}
+@media only screen and (max-width: 395px) {
+  .promo-section__content-header h3 {
+    font-size: 3rem;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .about-us__header h2 {
+    font-size: 7rem;
+  }
+  .about-us__header .text-in-header {
+    top: 30%;
+  }
+  .about-us__content .header-description .text-col-left h3 {
+    font-size: 4rem;
+  }
+  .our-values__header h2 {
+    font-size: 7rem;
+  }
 }
 /*# sourceMappingURL=home.css.map */
