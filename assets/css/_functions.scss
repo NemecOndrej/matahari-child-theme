@@ -219,8 +219,8 @@
 
         // Headline 5
     } @else if ($type== "h5") {
-        $fs: 18;
-        $lh: 28;
+        $fs: 32;
+        $lh: 40;
         font-size: calc(var(--fs-small-rate) * toRem($fs));
 
         // Headline 6
@@ -254,6 +254,12 @@
     } @else if ($type== "dt-4") {
         $fs: 16;
         $lh: 28;
+        font-size: calc(var(--fs-small-rate) * toRem($fs));
+
+        // Display text 5
+    } @else if ($type== "dt-5") {
+        $fs: 20;
+        $lh: 30;
         font-size: calc(var(--fs-small-rate) * toRem($fs));
 
         /*	3) General text group

@@ -85,6 +85,14 @@ if ( current_user_can( 'administrator' ) ) {
 
 #endregion
 
+function swiper_scripts(): void
+{
+	wp_enqueue_style('swiper-style', get_template_directory_uri() . '/assets/js/library/swiperjs/swiper-bundle.min.css');
+	wp_enqueue_script('script-swiper', get_template_directory_uri() . '/assets/js/library/swiperjs/swiper-bundle.min.js', array(), '', true);
+}
+
+add_action('wp_enqueue_scripts', 'swiper_scripts');
+
 #region THEME CONSTANTS ================================================================================
 
 // CONFIGURATION CONSTS - dynamic (by each theme)
