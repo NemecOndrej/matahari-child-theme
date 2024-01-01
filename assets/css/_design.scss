@@ -146,7 +146,7 @@ svg {
 
 .hamburger {
     $hamburger-size: 4rem;
-    $hamburder-bg: red;
+    $hamburder-bg: white;
     $hamburger-radius: 4px;
     $hamburger-border-width: 0;
     $hamburger-border: $hamburger-border-width solid var(--primary);
@@ -420,6 +420,7 @@ body.admin-bar {
     text-align: center;
     border-radius: 1rem;
     background: var(--Blue, #4997d3);
+    @include transition();
 }
 
 .btn-primary-white {
@@ -434,6 +435,12 @@ body.admin-bar {
     border-radius: 1rem;
     background: var(--White, #fff);
     color: var(--Black, #222);
+    @include transition();
+
+    &:hover {
+        background: var(--Blue, #4997d3);
+        color: var(--White, #fff);
+    }
 }
 
 .btn-secondary {
@@ -449,11 +456,64 @@ body.admin-bar {
     border: 1px solid var(--White, #fff);
     background: transparent;
     color: var(--White, #fff);
+    @include transition();
+
+    &:hover {
+        background: var(--Blue, #4997d3);
+        border: 1px solid var(--Blue, #4997d3);
+    }
+}
+
+.single-post {
+    margin-bottom: 5rem;
+    &__header {
+        margin-bottom: 5rem;
+    }
+
+    img {
+        margin: 2.5rem 0 2.5rem 0;
+        border-radius: 2.5rem;
+    }
+
+    &__content {
+        @include f(p, l);
+        font-size: 1.6rem;
+        line-height: calc(2.4rem / 1.6rem);
+    }
+
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        padding-bottom: 1.5rem;
+    }
+
+    ol {
+        margin-left: 6rem;
+        text-align: justify;
+        margin-bottom: 3rem;
+    }
+
+    strong {
+        @include f(p, m);
+    }
+
+    .under-text {
+        text-align: center;
+        font-size: 1.4rem;
+    }
 }
 
 /* MOBILE VERSION */
 @media screen and (max-width: 970px) {
     .site-header {
+        .site-header__left-col {
+            flex: 12;
+        }
+
         .hamburger {
             display: block;
         }
@@ -467,7 +527,7 @@ body.admin-bar {
             // bottom: 0;
             display: block;
             overflow: hidden;
-            background: black;
+            background: white;
             @include transition();
 
             ul {
@@ -571,12 +631,31 @@ body.admin-bar {
         }
 
         &-links {
-            width: 100%;
-            display: flex;
-            gap: 3.2rem;
+            ul {
+                width: 100%;
+                display: flex;
+                gap: 3.2rem;
 
-            h5 {
-                color: var(--White, #fff);
+                h5 {
+                    color: var(--White, #fff);
+                }
+
+                li {
+                    list-style: none;
+
+                    a {
+                        @include f(p, m);
+                        font-size: 1.8rem;
+                        font-style: normal;
+                        line-height: 2.4rem;
+                        color: var(--White, #fff);
+                        @include transition();
+
+                        &:hover {
+                            color: var(--Blue, #4997d3);
+                        }
+                    }
+                }
             }
         }
 
@@ -600,7 +679,45 @@ body.admin-bar {
 
                 a {
                     color: var(--White, #fff);
+                    @include transition();
+
+                    &:hover {
+                        color: var(--Blue, #4997d3);
+                    }
                 }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1235px) {
+    .site-footer {
+        flex-direction: column;
+
+        &__col-left {
+            display: none;
+        }
+
+        &__col-right {
+            max-width: 100%;
+        }
+    }
+}
+
+@media only screen and (max-width: 667px) {
+    .site-footer {
+        &__col-right {
+            height: auto;
+            padding: 3.6rem;
+
+            &-links {
+                ul {
+                    flex-direction: column;
+                }
+            }
+
+            &-copywrite {
+                gap: 1rem;
             }
         }
     }

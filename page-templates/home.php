@@ -10,8 +10,7 @@ get_header();
 
 <section class="promo-section container">
     <div class="promo-section__image">
-        <?php Theme::print_image('301', 'fullsize') ?>
-
+        <?php Theme::print_image('301', 'fullsize', 'fetchpriority=high') ?>
         <div class="promo-section__content">
             <div class="promo-section__content-header">
                 <div class="text-one">
@@ -109,8 +108,8 @@ get_header();
                 <h5>Private Lesson</h5>
                 <p class="dt-5">Private one-on-one surf lessons at 560,000 Indonesian Rupiah.</p>
                 <div class="course__items-card-hover-buttons">
-                    <a href="#" class="btn-primary-white">Book Now</a>
-                    <a href="#" class="btn-secondary">Book Now</a>
+                    <a href="<?= esc_url(home_url('/private-lesson-2')) ?>" class="btn-primary-white">Book Now</a>
+                    <a href="#" class="btn-secondary">Learn More</a>
                 </div>
             </div>
         </div>
@@ -126,8 +125,8 @@ get_header();
                 <h5>Group Lesson</h5>
                 <p class="dt-5">Join group surf lessons for 450,000 Indonesian Rupiah.</p>
                 <div class="course__items-card-hover-buttons">
-                    <a href="#" class="btn-primary-white">Book Now</a>
-                    <a href="#" class="btn-secondary">Book Now</a>
+                    <a href="<?= esc_url(home_url('/group-lesson')) ?>" class="btn-primary-white">Book Now</a>
+                    <a href="#" class="btn-secondary">Learn More</a>
                 </div>
             </div>
         </div>
@@ -143,8 +142,8 @@ get_header();
                 <h5>Family Lesson</h5>
                 <p class="dt-5">Family surf lessons for four at Matahari Surf School for 2,000,000 Indonesian Rupiah.</p>
                 <div class="course__items-card-hover-buttons">
-                    <a href="#" class="btn-primary-white">Book Now</a>
-                    <a href="#" class="btn-secondary">Book Now</a>
+                    <a href="<?= esc_url(home_url('/family-lesson-2')) ?>" class="btn-primary-white">Book Now</a>
+                    <a href="#" class="btn-secondary">Learn More</a>
                 </div>
             </div>
         </div>
@@ -183,28 +182,51 @@ get_header();
         </div>
     </div>
     <div class="gallery__site">
-        <a href="<?= esc_url('https://www.instagram.com/mataharisurfschool/') ?>" class="btn-site dt-1" target="_blank"><i><?php Theme::print_image('311', 'fullsize') ?></i> Follow us on @mataharisurfschool</a>
+        <a href="<?= esc_url('https://www.instagram.com/mataharisurfschool/') ?>" class="btn-site dt-1" target="_blank"><i><?php Theme::read_svg(THEME_PATH . '/assets/images/instagram.svg') ?></i> Follow us on @mataharisurfschool</a>
     </div>
 </section>
 
-<section class="hero-section container" id="blog    ">
+<section class="hero-section container" id="blog">
     <div class="hero-section__header">
         <h2>News</h2>
         <p class="text-in-header">All</p>
         <p class="dt-2">Latest wave and surf news from around the world.</p>
     </div>
+
+    <?php
+    $args = ['post_type' => 'post'];
+    $query = new WP_Query($args);
+    ?>
+
     <div class="hero-section__boxes">
         <div class="swiper hero-section__col-left newsSwiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <?php Theme::print_image('296', 'fullsize') ?>
-                </div>
-                <div class="swiper-slide">
-                    <?php Theme::print_image('296', 'fullsize') ?>
-                </div>
-                <div class="swiper-slide">
-                    <?php Theme::print_image('296', 'fullsize') ?>
-                </div>
+                <?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
+                        <a href="<?= get_permalink() ?>" class="swiper-slide news">
+                            <div class="gradient-news"></div>
+                            <?= $image_id = get_the_post_thumbnail($post->ID); ?>
+                            <?php Theme::print_image($image_id, 'fullsize') ?>
+                            <div class="hero-section__col-left-content">
+                                <div class="header">
+                                    <h4><?php the_title(); ?></h4>
+                                </div>
+                                <div class="author-date">
+                                    <div class="author-icon">
+                                        <?php Theme::print_image('300', 'fullsize') ?>
+                                    </div>
+                                    <div class="author-content">
+                                        <div class="author-name">
+                                            <p class="dt-5"><?php the_author(); ?></p>
+                                        </div>
+                                        <div class="date">
+                                            <p class="date-text"><?php the_date('d. F Y'); ?></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    <?php endwhile ?>
+                <?php endif; ?>
             </div>
             <div class="swiper-pagination"></div>
             <div class="autoplay-progress">
@@ -243,50 +265,50 @@ get_header();
         <div class="asked-question__col-left-header">
             <h3>FREQUENTLY ASKED QUESTION</h3>
         </div>
-        <p class="dt-5">What our clients usually asked about our services and tours.</p>
+        <p class="dt-5">Answers to your most common surfing questions, from lessons to surf trips.</p>
         <div class="dots"></div>
     </div>
     <div class="asked-question__col-right">
         <div class="asked-question__col-right-text">
-            <div class="asked-question__col-right-text-content">
-                <h5>What type of travel packages does Vacasky offer?</h5>
+            <a href="#" type="button" class="asked-question__col-right-text-content">
+                <h5>How long does the lesson last?</h5>
                 <div class="circle">
                     <?php Theme::print_image('315', 'fullsize') ?>
                 </div>
-            </div>
+            </a>
             <div class="content" style="display: none;">
                 Zde bude podrobný obsah odpovědi.
             </div>
         </div>
         <div class="asked-question__col-right-text">
-            <div class="asked-question__col-right-text-content">
-                <h5>What type of travel packages does Vacasky offer?</h5>
+            <a href="#" type="button" class="asked-question__col-right-text-content">
+                <h5>How do we get to you?</h5>
                 <div class="circle">
                     <?php Theme::print_image('315', 'fullsize') ?>
                 </div>
-            </div>
+            </a>
             <div class="content" style="display: none;">
                 Zde bude podrobný obsah odpovědi.
             </div>
         </div>
         <div class="asked-question__col-right-text">
-            <div class="asked-question__col-right-text-content">
-                <h5>What type of travel packages does Vacasky offer?</h5>
+            <a href="#" type="button" class="asked-question__col-right-text-content">
+                <h5>What should we bring?</h5>
                 <div class="circle">
                     <?php Theme::print_image('315', 'fullsize') ?>
                 </div>
-            </div>
+            </a>
             <div class="content" style="display: none;">
                 Zde bude podrobný obsah odpovědi.
             </div>
         </div>
         <div class="asked-question__col-right-text">
-            <div class="asked-question__col-right-text-content">
-                <h5>What type of travel packages does Vacasky offer?</h5>
+            <a href="#" type="button" class="asked-question__col-right-text-content">
+                <h5>What is included in the price of the lesson?</h5>
                 <div class="circle">
                     <?php Theme::print_image('315', 'fullsize') ?>
                 </div>
-            </div>
+            </a>
             <div class="content" style="display: none;">
                 Zde bude podrobný obsah odpovědi.
             </div>

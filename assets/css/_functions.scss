@@ -213,8 +213,8 @@
 
         // Headline 4
     } @else if ($type== "h4") {
-        $fs: 40;
-        $lh: 50;
+        $fs: 72;
+        $lh: 72;
         font-size: calc(var(--fs-rate) * toRem($fs));
 
         // Headline 5

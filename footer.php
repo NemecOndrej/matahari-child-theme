@@ -18,18 +18,26 @@
             <?php Theme::print_image('300', 'fullsize') ?>
         </div>
         <div class="site-footer__col-right-links">
-            <a href="#">
-                <h5>Homepage</h5>
-            </a>
-            <a href="#">
-                <h5>About Us</h5>
-            </a>
-            <a href="#">
-                <h5>Gallery</h5>
-            </a>
-            <a href="#">
-                <h5>Team</h5>
-            </a>
+            <?php
+            wp_nav_menu(array(
+                'theme_location'  => 'menu-footer',
+                'menu'            => '',
+                'container'       => '',
+                'container_class' => '',
+                'container_id'    => '',
+                'menu_class'      => '',
+                'menu_id'         => '',
+                'echo'            => true,
+                'fallback_cb'     => '',
+                'before'          => '',
+                'after'           => '',
+                'link_before'     => '',
+                'link_after'      => '',
+                'items_wrap'      => '<ul>%3$s</ul>',
+                'depth'           => 0,
+                'walker'          => ''
+            ));
+            ?>
         </div>
         <div class="site-footer__col-right-social">
             <a href="">
@@ -48,26 +56,6 @@
             <p class="dt-4"><a href="">Privacy Policy</a> | <a href="">Terms & Condition</a></p>
         </div>
     </div>
-    <?php
-    wp_nav_menu(array(
-        'theme_location'  => 'menu-footer',
-        'menu'            => '',
-        'container'       => '',
-        'container_class' => '',
-        'container_id'    => '',
-        'menu_class'      => '',
-        'menu_id'         => '',
-        'echo'            => true,
-        'fallback_cb'     => '',
-        'before'          => '',
-        'after'           => '',
-        'link_before'     => '',
-        'link_after'      => '',
-        'items_wrap'      => '<ul>%3$s</ul>',
-        'depth'           => 0,
-        'walker'          => ''
-    ));
-    ?>
 </footer>
 
 <script type="text/javascript">

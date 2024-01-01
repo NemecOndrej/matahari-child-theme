@@ -185,10 +185,10 @@ h4,
 .h4 {
   /*	1) Headlines text group
   --------------------------------------- */
-  font-size: calc(var(--fs-rate) * 4rem);
-  line-height: 1.25;
-  font-family: "Oswald-Bold", sans-serif;
-  font-weight: 700;
+  font-size: calc(var(--fs-rate) * 7.2rem);
+  line-height: 1;
+  font-family: "Oswald-Semibold", sans-serif;
+  font-weight: 500;
 }
 
 h5,
@@ -495,7 +495,7 @@ svg {
   height: 4rem;
   position: absolute;
   z-index: 0;
-  background: red;
+  background: white;
 }
 .hamburger span {
   border-radius: 1.5px;
@@ -708,6 +708,8 @@ body.admin-bar .site-header {
   text-align: center;
   border-radius: 1rem;
   background: var(--Blue, #4997d3);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .btn-primary-white {
@@ -722,6 +724,12 @@ body.admin-bar .site-header {
   border-radius: 1rem;
   background: var(--White, #fff);
   color: var(--Black, #222);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.btn-primary-white:hover {
+  background: var(--Blue, #4997d3);
+  color: var(--White, #fff);
 }
 
 .btn-secondary {
@@ -737,10 +745,60 @@ body.admin-bar .site-header {
   border: 1px solid var(--White, #fff);
   background: transparent;
   color: var(--White, #fff);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.btn-secondary:hover {
+  background: var(--Blue, #4997d3);
+  border: 1px solid var(--Blue, #4997d3);
+}
+
+.single-post {
+  margin-bottom: 5rem;
+}
+.single-post__header {
+  margin-bottom: 5rem;
+}
+.single-post img {
+  margin: 2.5rem 0 2.5rem 0;
+  border-radius: 2.5rem;
+}
+.single-post__content {
+  font-family: "Poppins-Light", sans-serif;
+  font-weight: 300;
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+.single-post p,
+.single-post h1,
+.single-post h2,
+.single-post h3,
+.single-post h4,
+.single-post h5,
+.single-post h6 {
+  padding-bottom: 1.5rem;
+}
+.single-post ol {
+  margin-left: 6rem;
+  text-align: justify;
+  margin-bottom: 3rem;
+}
+.single-post strong {
+  font-family: "Poppins-Medium", sans-serif;
+  font-weight: 500;
+}
+.single-post .under-text {
+  text-align: center;
+  font-size: 1.4rem;
 }
 
 /* MOBILE VERSION */
 @media screen and (max-width: 970px) {
+  .site-header .site-header__left-col {
+    -webkit-box-flex: 12;
+        -ms-flex: 12;
+            flex: 12;
+  }
   .site-header .hamburger {
     display: block;
   }
@@ -752,7 +810,7 @@ body.admin-bar .site-header {
     top: var(--site-header-height);
     display: block;
     overflow: hidden;
-    background: black;
+    background: white;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
@@ -868,15 +926,31 @@ body.admin-bar .site-header {
           flex-direction: column;
   max-width: 13rem;
 }
-.site-footer__col-right-links {
+.site-footer__col-right-links ul {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 3.2rem;
 }
-.site-footer__col-right-links h5 {
+.site-footer__col-right-links ul h5 {
   color: var(--White, #fff);
+}
+.site-footer__col-right-links ul li {
+  list-style: none;
+}
+.site-footer__col-right-links ul li a {
+  font-family: "Poppins-Medium", sans-serif;
+  font-weight: 500;
+  font-size: 1.8rem;
+  font-style: normal;
+  line-height: 2.4rem;
+  color: var(--White, #fff);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.site-footer__col-right-links ul li a:hover {
+  color: var(--Blue, #4997d3);
 }
 .site-footer__col-right-social {
   display: -webkit-box;
@@ -902,8 +976,42 @@ body.admin-bar .site-header {
 }
 .site-footer__col-right-copywrite .dt-4 a {
   color: var(--White, #fff);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.site-footer__col-right-copywrite .dt-4 a:hover {
+  color: var(--Blue, #4997d3);
 }
 
+@media only screen and (max-width: 1235px) {
+  .site-footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .site-footer__col-left {
+    display: none;
+  }
+  .site-footer__col-right {
+    max-width: 100%;
+  }
+}
+@media only screen and (max-width: 667px) {
+  .site-footer__col-right {
+    height: auto;
+    padding: 3.6rem;
+  }
+  .site-footer__col-right-links ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .site-footer__col-right-copywrite {
+    gap: 1rem;
+  }
+}
 /* #endregion */
 /* COMPONENTS */
 /*	Defined widths

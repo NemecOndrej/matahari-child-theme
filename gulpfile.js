@@ -17,7 +17,7 @@ var prefixerOptions = {
     overrideBrowserslist: ["last 2 versions"],
 };
 
-//const config = require('../../../.vscode/sftp.json'); //Tady můžeš změnit cestu k souboru sftp.json podle tvojí adresářové struktury
+const config = require("../../../.vscode/sftp.json");
 
 function deployFiles(pathFile, pathMap) {
     const globs = ["./" + pathFile, "./" + pathMap];

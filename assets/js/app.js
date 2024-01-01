@@ -341,7 +341,7 @@ var swiper = new Swiper(".newsSwiper", {
 });
 
 $(document).ready(function () {
-    $(".circle").click(function () {
+    $(".asked-question__col-right-text-content").click(function () {
         // Odebere třídu 'content-text' ze všech ostatních 'asked-question__col-right-text'
         $(".asked-question__col-right-text").removeClass("content-text");
 

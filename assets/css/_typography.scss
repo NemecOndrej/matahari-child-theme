@@ -39,7 +39,7 @@ h3,
 h4,
 .h4 {
     @include t(h4);
-    @include f(o, b);
+    @include f(o, sb);
     // margin-bottom: 3.2rem;
 }
 
