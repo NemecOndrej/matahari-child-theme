@@ -1,0 +1,26 @@
+/*	Defined widths
+--------------------------------------- */
+/*	Slider settings
+--------------------------------------- */
+/*	Colors
+--------------------------------------- */
+/*	Breakpoints
+--------------------------------------- */
+/*	Other
+--------------------------------------- */
+/* common border radius */
+/* disable text selection */
+/*	Font / Text Mixins
+======================================================================== */
+/*	Font family mixin
+    Examples:
+    @include f(s,r);
+    @include f(gs,l);
+--------------------------------------- */
+/*	Text mixin
+    (dynamic font size and line height)
+--------------------------------------- */
+.el-main {
+  padding-bottom: 5rem;
+}
+/*# sourceMappingURL=group-lesson.css.map */

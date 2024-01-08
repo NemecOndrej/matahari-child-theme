@@ -35,11 +35,11 @@ get_header();
 
     <div class="about-us__content">
         <div class="about-us__content-image">
-            <?php Theme::print_image('299', 'fullsize') ?>
+            <?php Theme::print_image('299', 'fullsize', 'loading=lazy') ?>
         </div>
         <div class="about-us__content-right">
             <div class="about-us__content-right-image">
-                <?php Theme::print_image('298', 'fullsize') ?>
+                <?php Theme::print_image('298', 'fullsize', 'loading=lazy') ?>
             </div>
             <div class="header-description">
                 <div class="text-col-left">
@@ -98,7 +98,7 @@ get_header();
     <div class="course__items">
         <div class="course__items-card">
             <div class="course__items-card-image" id="image-1">
-                <?php Theme::print_image('302', 'fullsize') ?>
+                <?php Theme::print_image('302', 'fullsize', 'loading=lazy') ?>
                 <div class="gradient"></div>
             </div>
             <div class="course__items-card-text">

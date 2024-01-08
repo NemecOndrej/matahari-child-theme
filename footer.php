@@ -40,10 +40,10 @@
             ?>
         </div>
         <div class="site-footer__col-right-social">
-            <a href="">
+            <a href="<?= esc_url('https://www.facebook.com/profile.php?id=100070244558029') ?>">
                 <?php Theme::print_image('314', 'fullsize') ?>
             </a>
-            <a href="">
+            <a href="<?= esc_url('https://www.instagram.com/mataharisurfschool/') ?>">
                 <?php Theme::print_image('312', 'fullsize') ?>
             </a>
             <a href="">
@@ -52,7 +52,7 @@
         </div>
 
         <div class="site-footer__col-right-copywrite">
-            <p class="dt-4">Copyright © 2023 Matahari. All rights reserved.</p>
+            <p class="dt-4">Copyright © <?= get_the_date('now') ?> Matahari. All rights reserved.</p>
             <p class="dt-4"><a href="">Privacy Policy</a> | <a href="">Terms & Condition</a></p>
         </div>
     </div>
