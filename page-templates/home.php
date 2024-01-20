@@ -10,7 +10,7 @@ get_header();
 
 <section class="promo-section container">
     <div class="promo-section__image">
-        <?php Theme::print_image('301', 'fullsize', 'fetchpriority=high') ?>
+        <?php Theme::print_image('301', 'promo_image', 'fetchpriority=high') ?>
         <div class="promo-section__content">
             <div class="promo-section__content-header">
                 <div class="text-one">
@@ -35,11 +35,11 @@ get_header();
 
     <div class="about-us__content">
         <div class="about-us__content-image">
-            <?php Theme::print_image('299', 'fullsize', 'loading=lazy') ?>
+            <?php Theme::print_image('299', 'about_image', 'loading=lazy') ?>
         </div>
         <div class="about-us__content-right">
             <div class="about-us__content-right-image">
-                <?php Theme::print_image('298', 'fullsize', 'loading=lazy') ?>
+                <?php Theme::print_image('298', 'about_image', 'loading=lazy') ?>
             </div>
             <div class="header-description">
                 <div class="text-col-left">
@@ -89,7 +89,7 @@ get_header();
     </div>
 </section>
 
-<section class="course container">
+<section class="course container" id="course">
     <div class="course__header">
         <h2>Course</h2>
         <p class="text-in-header">Surf</p>
@@ -98,52 +98,49 @@ get_header();
     <div class="course__items">
         <div class="course__items-card">
             <div class="course__items-card-image" id="image-1">
-                <?php Theme::print_image('302', 'fullsize', 'loading=lazy') ?>
+                <?php Theme::print_image('302', 'item_image', 'loading=lazy') ?>
                 <div class="gradient"></div>
             </div>
             <div class="course__items-card-text">
                 <h5>Private Lesson</h5>
-            </div>
-            <div class="course__items-card-hover-text">
-                <h5>Private Lesson</h5>
-                <p class="dt-5">Private one-on-one surf lessons at 560,000 Indonesian Rupiah.</p>
-                <div class="course__items-card-hover-buttons">
-                    <a href="<?= esc_url(home_url('/private-lesson-2')) ?>" class="btn-primary-white">Book Now</a>
-                    <a href="#" class="btn-secondary">Learn More</a>
+                <div class="hover">
+                    <p class="dt-5">Private one-on-one surf lessons at 560,000 Indonesian Rupiah.</p>
+                    <div class="course__items-card-hover-buttons">
+                        <a href="<?= esc_url(home_url('/private-lesson-2')) ?>" class="btn-secondary">Book Now</a>
+                        <a href="#" class="btn-secondary">Learn More</a>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="course__items-card">
             <div class="course__items-card-image" id="image-2">
-                <?php Theme::print_image('304', 'fullsize') ?>
+                <?php Theme::print_image('304', 'item_image') ?>
                 <div class="gradient"></div>
             </div>
             <div class="course__items-card-text">
                 <h5>Group Lesson</h5>
-            </div>
-            <div class="course__items-card-hover-text">
-                <h5>Group Lesson</h5>
-                <p class="dt-5">Join group surf lessons for 450,000 Indonesian Rupiah.</p>
-                <div class="course__items-card-hover-buttons">
-                    <a href="<?= esc_url(home_url('/group-lesson')) ?>" class="btn-primary-white">Book Now</a>
-                    <a href="#" class="btn-secondary">Learn More</a>
+                <div class="hover">
+                    <p class="dt-5">Join group surf lessons for 450,000 Indonesian Rupiah.</p>
+                    <div class="course__items-card-hover-buttons">
+                        <a href="<?= esc_url(home_url('/group-lesson')) ?>" class="btn-secondary">Book Now</a>
+                        <a href="#" class="btn-secondary">Learn More</a>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="course__items-card">
             <div class="course__items-card-image" id="image-3">
-                <?php Theme::print_image('305', 'fullsize') ?>
+                <?php Theme::print_image('305', 'item_image') ?>
                 <div class="gradient"></div>
             </div>
             <div class="course__items-card-text">
                 <h5>Family Lesson</h5>
-            </div>
-            <div class="course__items-card-hover-text">
-                <h5>Family Lesson</h5>
-                <p class="dt-5">Family surf lessons for four at Matahari Surf School for 2,000,000 Indonesian Rupiah.</p>
-                <div class="course__items-card-hover-buttons">
-                    <a href="<?= esc_url(home_url('/family-lesson-2')) ?>" class="btn-primary-white">Book Now</a>
-                    <a href="#" class="btn-secondary">Learn More</a>
+                <div class="hover">
+                    <p class="dt-5">Family surf lessons for four at Matahari Surf School for 2,000,000 Indonesian Rupiah.</p>
+                    <div class="course__items-card-hover-buttons">
+                        <a href="<?= esc_url(home_url('/family-lesson-2')) ?>" class="btn-secondary">Book Now</a>
+                        <a href="#" class="btn-secondary">Learn More</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -152,32 +149,89 @@ get_header();
 
 <section class="gallery container" id="gallery">
     <div class="gallery__header">
-        <h2>Gallery</h2>
-        <p class="text-in-header">Surf</p>
-        <p class="dt-2">Discover the beauty of surfing through the lens.</p>
+        <h2><?= get_field('nadpis_galerie') ?></h2>
+        <p class="text-in-header"><?= get_field('subnadpis_galerie') ?></p>
+        <p class="dt-2"><?= get_field('popis_galerie') ?></p>
     </div>
     <div class="gallery__content">
         <div class="gallery__content-left">
             <div class="left-image-first">
-                <?php Theme::print_image('306', 'fullsize') ?>
+                <?php
+                $image_left_large = get_field('obrazek_vlevo_vetsi');
+
+                if ($image_left_large) {
+
+                    $image_large_url = wp_get_attachment_image_src($image_left_large, 'full')[0];
+
+                    echo '<a href="' . esc_url($image_large_url) . '" data-fancybox="gallery" class="fancybox">';
+                    Theme::print_image($image_left_large, 'gallery_image');
+                    echo '</a>';
+                }
+
+                ?>
             </div>
             <div class="left-image-second">
-                <?php Theme::print_image('309', 'fullsize') ?>
+                <?php
+                $image_left_small = get_field('obrazek_vlevo_mensi');
+
+                if ($image_left_small) {
+
+                    $image_small_url = wp_get_attachment_image_src($image_left_small, 'full')[0];
+
+                    echo '<a href="' . esc_url($image_small_url) . '" data-fancybox="gallery" class="fancybox">';
+                    Theme::print_image($image_left_small, 'gallery_image');
+                    echo '</a>';
+                }
+                ?>
 
             </div>
         </div>
         <div class="gallery__content-center">
-            <?php Theme::print_image('308', 'fullsize') ?>
+            <?php
+            $image_center = get_field('hlavni_obrazek');
 
+            if ($image_center) {
+
+                $image_center_url = wp_get_attachment_image_src($image_center, 'full')[0];
+
+                echo '<a href="' . esc_url($image_center_url) . '" data-fancybox="gallery" class="fancybox">';
+                Theme::print_image($image_center, 'gallery_image');
+                echo '</a>';
+            }
+            ?>
         </div>
 
         <div class="gallery__content-right">
             <div class="right-image-first">
-                <?php Theme::print_image('310', 'fullsize') ?>
+                <?php
+
+                $image_right_small = get_field('obrazek_vpravo_mensi');
+
+                if ($image_right_small) {
+
+                    $image_right_small_url = wp_get_attachment_image_src($image_right_small, 'full')[0];
+
+                    echo '<a href="' . esc_url($image_right_small_url) . '" data-fancybox="gallery" class="fancybox">';
+                    Theme::print_image($image_right_small, 'gallery_image');
+                    echo '</a>';
+                }
+                ?>
 
             </div>
             <div class="right-image-second">
-                <?php Theme::print_image('307', 'fullsize') ?>
+                <?php
+
+                $image_right_large = get_field('obrazek_vpravo_vetsi');
+
+                if ($image_right_large) {
+
+                    $image_right_large_url = wp_get_attachment_image_src($image_right_large, 'full')[0];
+
+                    echo '<a href="' . esc_url($image_right_large_url) . '" data-fancybox="gallery" class="fancybox">';
+                    Theme::print_image($image_right_large, 'gallery_image');
+                    echo '</a>';
+                }
+                ?>
             </div>
         </div>
     </div>
@@ -205,14 +259,14 @@ get_header();
                         <a href="<?= get_permalink() ?>" class="swiper-slide news">
                             <div class="gradient-news"></div>
                             <?= $image_id = get_the_post_thumbnail($post->ID); ?>
-                            <?php Theme::print_image($image_id, 'fullsize') ?>
+                            <?php Theme::print_image($image_id, 'hero_boxes_image') ?>
                             <div class="hero-section__col-left-content">
                                 <div class="header">
                                     <h4><?php the_title(); ?></h4>
                                 </div>
                                 <div class="author-date">
                                     <div class="author-icon">
-                                        <?php Theme::print_image('300', 'fullsize') ?>
+                                        <?php Theme::print_image('300', 'hero_boxes_image') ?>
                                     </div>
                                     <div class="author-content">
                                         <div class="author-name">
@@ -238,7 +292,7 @@ get_header();
         </div>
         <div class="hero-section__col-right">
             <div class="hero-section__col-right-second-box">
-                <?php Theme::print_image('297', 'fullsize') ?>
+                <?php Theme::print_image('297', 'hero_boxes_image') ?>
                 <div class="box-gradient"></div>
                 <div class="box-content">
                     <div class="box-content__text">
@@ -273,44 +327,44 @@ get_header();
             <a href="#" type="button" class="asked-question__col-right-text-content">
                 <h5>How long does the lesson last?</h5>
                 <div class="circle">
-                    <?php Theme::print_image('315', 'fullsize') ?>
+                    <?php Theme::print_image('315', 'asked_image') ?>
                 </div>
             </a>
             <div class="content" style="display: none;">
-                Zde bude podrobný obsah odpovědi.
+                Each surf lesson is meticulously planned to last 2 hours, which includes theoretical instructions as well as practical surfing in the water.
             </div>
         </div>
         <div class="asked-question__col-right-text">
             <a href="#" type="button" class="asked-question__col-right-text-content">
                 <h5>How do we get to you?</h5>
                 <div class="circle">
-                    <?php Theme::print_image('315', 'fullsize') ?>
+                    <?php Theme::print_image('315', 'asked_image') ?>
                 </div>
             </a>
             <div class="content" style="display: none;">
-                Zde bude podrobný obsah odpovědi.
+                Our surf school is located at Pantai Batu Bolong, Warung Magic Wave, Canggu, Indonesia, Bali. For detailed directions, please visit our website or contact us directly. The school is easily accessible by public transport or car.
             </div>
         </div>
         <div class="asked-question__col-right-text">
             <a href="#" type="button" class="asked-question__col-right-text-content">
                 <h5>What should we bring?</h5>
                 <div class="circle">
-                    <?php Theme::print_image('315', 'fullsize') ?>
+                    <?php Theme::print_image('315', 'asked_image') ?>
                 </div>
             </a>
             <div class="content" style="display: none;">
-                Zde bude podrobný obsah odpovědi.
+                We recommend bringing swimwear, a towel, sunscreen, and a water bottle. We provide all necessary surfing equipment, including surfboards and wetsuits.
             </div>
         </div>
         <div class="asked-question__col-right-text">
             <a href="#" type="button" class="asked-question__col-right-text-content">
                 <h5>What is included in the price of the lesson?</h5>
                 <div class="circle">
-                    <?php Theme::print_image('315', 'fullsize') ?>
+                    <?php Theme::print_image('315', 'asked_image') ?>
                 </div>
             </a>
             <div class="content" style="display: none;">
-                Zde bude podrobný obsah odpovědi.
+                The lesson price includes professional instruction, surfboard and wetsuit rental, and insurance. Transportation to the surf school is not included in the price.
             </div>
         </div>
     </div>

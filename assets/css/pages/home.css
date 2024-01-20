@@ -92,6 +92,12 @@
   -webkit-box-shadow: 5px 20px 50px 0px rgba(0, 0, 0, 0.1);
           box-shadow: 5px 20px 50px 0px rgba(0, 0, 0, 0.1);
   background: #d9d9d9;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.hero-section__col-left:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
 }
 .hero-section__col-left img {
   width: 100%;
@@ -388,6 +394,12 @@
   border-radius: 2.5rem;
   -webkit-box-shadow: 5px 20px 50px 0px rgba(0, 0, 0, 0.1);
           box-shadow: 5px 20px 50px 0px rgba(0, 0, 0, 0.1);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.about-us__content-image img:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 .about-us__content-right {
   width: 100%;
@@ -722,8 +734,12 @@
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 2.4rem;
+  overflow: hidden;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+}
+.course__items-card:not(:hover) {
+  overflow: visible;
 }
 .course__items-card-image img {
   width: 100%;
@@ -734,8 +750,38 @@
   border-radius: 2.5rem;
   background: #d9d9d9;
 }
-.course__items-card-hover-text {
-  display: none;
+.course__items-card-text {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1.2rem;
+  bottom: 0;
+  left: 0;
+  padding: 2rem;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  pointer-events: none;
+}
+.course__items-card-text .hover {
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+  color: var(--White, #fff);
+}
+.course__items-card-text .hover .course__items-card-hover-buttons {
+  color: var(--White, #fff);
+}
+.course__items-card-text .hover .course__items-card-hover-buttons .btn-primary-white {
+  color: transparent;
 }
 .course__items-card:hover {
   position: relative;
@@ -745,14 +791,18 @@
   position: relative;
   width: 100%;
   max-width: 71.2rem;
-  height: 60.9rem;
+  height: 50.9rem;
   border-radius: 2.5rem;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transform-origin: top center;
+          transform-origin: top center;
 }
 .course__items-card:hover .course__items-card-image .gradient {
   position: absolute;
   width: 100%;
   max-width: 71.3rem;
-  height: 60.9rem;
+  height: 50.9rem;
   -ms-flex-negative: 0;
       flex-shrink: 0;
   border-radius: 2.5rem;
@@ -777,10 +827,14 @@
   display: none;
 }
 .course__items-card:hover .course__items-card-text {
-  display: none;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  pointer-events: all;
 }
-.course__items-card:hover .course__items-card-hover-text {
-  position: absolute;
+.course__items-card:hover .course__items-card-text h5 {
+  color: var(--White, #fff);
+}
+.course__items-card:hover .course__items-card-text .hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -789,23 +843,22 @@
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 1.2rem;
-  bottom: 0;
-  padding: 2rem;
+  opacity: 1;
 }
-.course__items-card:hover .course__items-card-hover-text h5 {
-  color: var(--White, #fff);
-}
-.course__items-card:hover .course__items-card-hover-text .dt-5 {
+.course__items-card:hover .course__items-card-text .hover .dt-5 {
   width: 100%;
   max-width: 61.3rem;
   color: var(--White, #fff);
 }
-.course__items-card:hover .course__items-card-hover-buttons {
+.course__items-card:hover .course__items-card-text .hover .course__items-card-hover-buttons {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 1.6rem;
+}
+.course__items-card:hover .course__items-card-text .hover .course__items-card-hover-buttons .btn-primary-white {
+  color: transparent;
 }
 
 .gallery {
@@ -888,6 +941,12 @@
   background: #d9d9d9;
   -webkit-box-shadow: 5px 20px 50px 0px rgba(0, 0, 0, 0.1);
           box-shadow: 5px 20px 50px 0px rgba(0, 0, 0, 0.1);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.gallery__content-left .left-image-first img:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 .gallery__content-left .left-image-second img {
   width: 100%;
@@ -897,6 +956,12 @@
   background: #d9d9d9;
   -webkit-box-shadow: 5px 20px 50px 0px rgba(0, 0, 0, 0.1);
           box-shadow: 5px 20px 50px 0px rgba(0, 0, 0, 0.1);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.gallery__content-left .left-image-second img:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 .gallery__content-center img {
   width: 100%;
@@ -909,6 +974,12 @@
   background: #d9d9d9;
   -webkit-box-shadow: 5px 20px 50px 0px rgba(0, 0, 0, 0.1);
           box-shadow: 5px 20px 50px 0px rgba(0, 0, 0, 0.1);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.gallery__content-center img:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 .gallery__content-right {
   width: 100%;
@@ -930,6 +1001,12 @@
   background: #d9d9d9;
   -webkit-box-shadow: 5px 20px 50px 0px rgba(0, 0, 0, 0.1);
           box-shadow: 5px 20px 50px 0px rgba(0, 0, 0, 0.1);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.gallery__content-right .right-image-first img:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 .gallery__content-right .right-image-second img {
   width: 100%;
@@ -938,6 +1015,12 @@
   background: #d9d9d9;
   -webkit-box-shadow: 5px 20px 50px 0px rgba(0, 0, 0, 0.1);
           box-shadow: 5px 20px 50px 0px rgba(0, 0, 0, 0.1);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.gallery__content-right .right-image-second img:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 .gallery__site {
   display: -webkit-inline-box;
@@ -1182,12 +1265,12 @@
   .about-us__content-right-image img {
     height: auto;
   }
+}
+@media only screen and (max-width: 1080px) {
   .course__items {
+    gap: 8.1rem;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-  }
-  .course__items-card-image img {
-    height: auto;
   }
 }
 @media only screen and (max-width: 900px) {
@@ -1266,9 +1349,6 @@
 @media only screen and (max-width: 500px) {
   .hero-section {
     padding-bottom: 7rem;
-  }
-  .hero-section__col-left img {
-    height: 30rem;
   }
   .hero-section__col-left-text {
     padding: 6.7rem 0 6.7rem 2rem;
