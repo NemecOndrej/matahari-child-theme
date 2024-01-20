@@ -765,16 +765,14 @@
   padding: 2rem;
   -webkit-transform: translateY(100%);
           transform: translateY(100%);
-  -webkit-transition: -webkit-transform 0.3s ease-in-out;
-  transition: -webkit-transform 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
   pointer-events: none;
 }
 .course__items-card-text .hover {
   opacity: 0;
-  -webkit-transition: opacity 0.3s ease-in-out;
-  transition: opacity 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
   color: var(--White, #fff);
 }
 .course__items-card-text .hover .course__items-card-hover-buttons {
@@ -1113,7 +1111,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 5.2rem;
+  gap: 8.2rem;
   margin-top: 10rem;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
@@ -1121,6 +1119,7 @@
   width: 100%;
 }
 .asked-question__col-right-text {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1130,6 +1129,26 @@
           flex-direction: column;
   width: 100%;
   max-width: 91.5rem;
+}
+.asked-question__col-right-text .content {
+  width: 100%;
+  max-width: 81.5rem;
+  position: absolute;
+  opacity: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+  color: transparent;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.asked-question__col-right-text:hover .content {
+  opacity: 1;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  color: var(--Black, #222);
+  padding-bottom: 3rem;
 }
 .asked-question__col-right-text-content {
   display: -webkit-box;
@@ -1149,15 +1168,6 @@
       flex-shrink: 0;
   fill: var(--Blue, #4997d3);
   -webkit-text-stroke: 1px var(--Blue, #4997d3);
-}
-.asked-question__col-right .content-text {
-  width: 100%;
-  max-width: 98.7rem;
-  padding: 3.6rem;
-  border-radius: 2.5rem;
-  background: var(--White, #fff);
-  -webkit-box-shadow: 5px 20px 50px 0px rgba(0, 0, 0, 0.05);
-          box-shadow: 5px 20px 50px 0px rgba(0, 0, 0, 0.05);
 }
 
 .swiper {

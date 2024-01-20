@@ -1,12 +1,14 @@
 <?php /*ěščřžýáíéúů*/
 /*
-Template Name: Family Lesson
+Template Name: Course
 Template Post Type: page, post
 */
 
 the_post();
 get_header();
+?>
 
-echo do_shortcode('[bookingpress_form service=3]');
 
+<?php
 get_footer();
+?>

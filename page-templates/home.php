@@ -330,7 +330,7 @@ get_header();
                     <?php Theme::print_image('315', 'asked_image') ?>
                 </div>
             </a>
-            <div class="content" style="display: none;">
+            <div class="content">
                 Each surf lesson is meticulously planned to last 2 hours, which includes theoretical instructions as well as practical surfing in the water.
             </div>
         </div>
@@ -341,7 +341,7 @@ get_header();
                     <?php Theme::print_image('315', 'asked_image') ?>
                 </div>
             </a>
-            <div class="content" style="display: none;">
+            <div class="content">
                 Our surf school is located at Pantai Batu Bolong, Warung Magic Wave, Canggu, Indonesia, Bali. For detailed directions, please visit our website or contact us directly. The school is easily accessible by public transport or car.
             </div>
         </div>
@@ -352,7 +352,7 @@ get_header();
                     <?php Theme::print_image('315', 'asked_image') ?>
                 </div>
             </a>
-            <div class="content" style="display: none;">
+            <div class="content">
                 We recommend bringing swimwear, a towel, sunscreen, and a water bottle. We provide all necessary surfing equipment, including surfboards and wetsuits.
             </div>
         </div>
@@ -363,7 +363,7 @@ get_header();
                     <?php Theme::print_image('315', 'asked_image') ?>
                 </div>
             </a>
-            <div class="content" style="display: none;">
+            <div class="content">
                 The lesson price includes professional instruction, surfboard and wetsuit rental, and insurance. Transportation to the surf school is not included in the price.
             </div>
         </div>

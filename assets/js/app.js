@@ -339,30 +339,3 @@ var swiper = new Swiper(".newsSwiper", {
         },
     },
 });
-
-$(document).ready(function () {
-    $(".asked-question__col-right-text-content").click(function () {
-        // Odebere třídu 'content-text' ze všech ostatních 'asked-question__col-right-text'
-        $(".asked-question__col-right-text").removeClass("content-text");
-
-        // Skryje všechny ostatní otevřené odpovědi
-        $(".content").hide();
-
-        // Zobrazí obsah příslušný k kliknutému kruhu
-        var contentDiv = $(this)
-            .closest(".asked-question__col-right-text")
-            .find(".content");
-        contentDiv.toggle();
-
-        // Přidá třídu 'content-text', pokud je obsah zobrazen
-        if (contentDiv.is(":visible")) {
-            $(this)
-                .closest(".asked-question__col-right-text")
-                .addClass("content-text");
-        } else {
-            $(this)
-                .closest(".asked-question__col-right-text")
-                .removeClass("content-text");
-        }
-    });
-});
